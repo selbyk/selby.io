@@ -1,4 +1,4 @@
-# [Ruby](http://selby.io)
+# [selby.io](http://selby.io)
 
 This is a barebones Ruby app using the [Sinatra](http://www.sinatrarb.com) framework.
 
