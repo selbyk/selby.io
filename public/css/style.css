@@ -19,7 +19,7 @@ body {
 #laptop {
     width: 838px;
     height: 498px;
-    background-image: url(img/laptop.png);
+    background-image: url(/img/laptop.png);
     margin: 50px auto;
     }
 
@@ -81,19 +81,19 @@ body {
 }
 
 .social-wrapper .github{
-    background-image: url(img/github.png);
+    background-image: url(/img/github.png);
 }
 
 .social-wrapper .linkedin{
-    background-image: url(img/linkedin.png);
+    background-image: url(/img/linkedin.png);
 }
 
 .social-wrapper .lastfm{
-    background-image: url(img/lastfm.png);
+    background-image: url(/img/lastfm.png);
 }
 
 .social-wrapper .email{
-    background-image: url(img/email.png);
+    background-image: url(/img/email.png);
 }
 
 .centered{
