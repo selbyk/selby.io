@@ -4,7 +4,7 @@ This is a barebones Ruby app using the [Sinatra](http://www.sinatrarb.com) frame
 
 ## Running Locally
 
-Asumming you have [Ruby](https://www.ruby-lang.org) and [Bundler](http://bundler.io) installed on your machine:
+Asumming you have [Git](http://git-scm.com/), [Ruby](https://www.ruby-lang.org), and [Bundler](http://bundler.io) installed on your machine:
 
 ```sh
 git clone git@github.com:selbyk/selbyk.io.git # or clone your own fork
