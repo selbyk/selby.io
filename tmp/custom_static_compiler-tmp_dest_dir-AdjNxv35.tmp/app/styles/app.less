@@ -1,0 +1,350 @@
+/* definition */
+@font-face {
+  font-family: Solothurn;
+  src: url('/fonts/solothurn/Solothurn-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: bold;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,200|Source+Code+Pro:400,300|Comfortaa:400,300);
+
+/* Fix user-agent */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  margin-top: 0;
+  padding: 0;
+  position: relative;
+  font-family:
+    "Raleway",
+    sans-serif;
+  font-weight: 200;
+  height: 100%;
+}
+
+.logo {
+  font-family: Solothurn;
+  font-size: 2em !important;
+  text-transform: lowercase;
+  text-decoration: none;
+  letter-spacing: 0em;
+  word-spacing: 0em;
+  line-height: 0.4;
+  display: block;
+  padding: 3px;
+  color: #F8F8F8;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: transparent;
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  text-shadow: -3px -4px 3px rgba(43, 62, 80, 1);
+  text-shadow: 4px 3px 3px rgba(43, 62, 80, 1);
+  text-shadow: -3px 4px 3px rgba(43, 62, 80, 1);
+  text-shadow: 4px -3px 3px rgba(43, 62, 80, 1);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+
+#top {
+  padding-top: 5em;
+}
+
+#top p{
+  font-weight: lighter !important;
+  font-size: 1em;
+}
+
+#footer {
+  padding-top: 10em;
+  background-color: #000;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.black {
+  background-color: #000;
+}
+
+.section {
+  min-height: 40vh;
+}
+
+.button{
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  background: center center no-repeat;
+  background-size: contain;
+}
+.button a {
+  display:block;
+  width:100%;
+  height:100%;
+}
+.button:hover {
+  opacity: 0.7;
+}
+.github{
+  background-image: url(/img/github.png);
+}
+.linkedin{
+  background-image: url(/img/linkedin.png);
+}
+.lastfm{
+  background-image: url(/img/lastfm.png);
+}
+.email{
+  background-image: url(/img/email.png);
+}
+
+ul {
+  list-style: none;
+  word-wrap: break-word;
+}
+
+/* Pages */
+
+.pages {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.page {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+/* Login Page */
+
+.login.page {
+  background-color: #000;
+}
+
+.login.page .form {
+  height: 100px;
+  margin-top: -100px;
+  position: absolute;
+
+  text-align: center;
+  top: 50%;
+  width: 100%;
+}
+
+.login.page .form .usernameInput {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #fff;
+  outline: none;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 400px;
+}
+
+.login.page .title {
+  font-size: 200%;
+}
+
+.login.page .usernameInput {
+  font-size: 200%;
+  letter-spacing: 3px;
+}
+
+.login.page .title, .login.page .usernameInput {
+  color: #fff;
+  font-weight: 100;
+}
+
+/* Chat page */
+
+.chat.page {
+  display: none;
+}
+
+/* Font */
+
+.messages {
+  font-size: 150%;
+}
+
+.inputMessage {
+  font-size: 100%;
+}
+
+.log {
+  color: gray;
+  font-size: 70%;
+  margin: 5px;
+  text-align: center;
+}
+
+/* Messages */
+
+.chatArea {
+  height: 100%;
+  padding-bottom: 60px;
+}
+
+.messages {
+  height: 100%;
+  margin: 0;
+  overflow-y: scroll;
+  padding: 10px 20px 10px 20px;
+}
+
+.message.typing .messageBody {
+  color: gray;
+}
+
+.username {
+  float: left;
+  font-weight: 700;
+  overflow: hidden;
+  padding-right: 15px;
+  text-align: right;
+}
+
+/* Input */
+
+.inputMessage {
+  border: 10px solid #000;
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  outline: none;
+  padding-left: 10px;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+
+@import "bower_components/bootstrap/less/bootstrap.less";
+@import "app/styles/superhero/variables.less";
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 500px;
+  margin-bottom: 60px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 500px;
+  background-color: transparent;
+}
+.carousel-inner > .item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 500px;
+}
+
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 20px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+span.fa-angle-double-left {
+  padding-top: 200px;
+}
+span.fa-angle-double-right {
+  padding-top: 200px;
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 120px;
+  }
+}

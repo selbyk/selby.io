@@ -1,0 +1,26 @@
+{
+"name": "Chores",
+"children": [
+ {
+ "name": "Selby",
+ "children": [
+  { "name": "Dishes", "color": "#eee"},
+  { "name": "Garbage", "color": "#eee"}
+ ]
+},
+{
+ "name": "Emily",
+ "children": [
+  { "name": "Dishes", "color": "#eee"},
+  { "name": "Garbage", "color": "#eee"}
+ ]
+},
+{
+ "name": "Erwin",
+ "children": [
+  { "name": "Dishes", "color": "#eee"},
+  { "name": "Garbage", "color": "#eee"}
+ ]
+}
+]
+}
