@@ -1,8 +1,13 @@
-# Selby
+# [selby.io](http://selby.io)
 
-This README outlines the details of collaborating on this Ember application.
+This is my personal website, so the documentation may not be very
+written up very well, but I'll try to make playing around with the
+code as simple as possible.
 
-A short introduction of this app could easily go here.
+The front-end is written as an Ember application located in ./app,
+and the backend api and server are written using nodejs, express,
+and socket.io.  You can find that in ./selby.io.js
+
 
 ## Prerequisites
 
@@ -13,6 +18,7 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
+* `sudo npm install ember-cli -g`
 * `git clone <repository-url>` this repository
 * change into the new directory
 * `npm install`
@@ -20,8 +26,9 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+* `ember build`
+* `node app.js`
+* Visit a replica of selby.io at http://localhost:8080.
 
 ### Code Generators
 
@@ -48,4 +55,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
