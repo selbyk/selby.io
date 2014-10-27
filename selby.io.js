@@ -40,14 +40,14 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 app.get('/deploy', function(req, res) {
     var body = 'Deployed';
     function puts(error, stdout, stderr) { res.send(body + '\n' + stdout); }
-    exec("git pull && npm install && bower install && ember build && forever restart selby.io.js", puts);
+    exec("git pull && npm install && bower install && ember build --environment=production && forever restart selby.io.js", puts);
 
 });
 
 app.post('/deploy', function(req, res) {
     var body = 'Deployed';
     function puts(error, stdout, stderr) { res.send(body + '\n' + stdout); }
-    exec("git pull && npm install && bower install && ember build && forever restart selby.io.js", puts);
+    exec("git pull && npm install && bower install && ember build --environment=production && forever restart selby.io.js", puts);
 
 });
 
