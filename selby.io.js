@@ -69,7 +69,7 @@ client.addListener('message', function (from, to, message) {
 
 client.addListener('error', function(message) {
   console.error('ERROR: %s: %s', message.command, message.args.join(' '));
-  connection.query("INSERT INTO `error` (`time`, `command`, `args`) VALUES ?", [[[Date.now(), message.command, message.args.join(' '$
+  connection.query("INSERT INTO `error` (`time`, `command`, `args`) VALUES ?", [[[Date.now(), message.command, message.args.join(' ')]]], function(err) {
     if (err) throw err;
   });
 });
