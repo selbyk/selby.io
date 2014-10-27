@@ -15,7 +15,7 @@ var connection = mysql.createConnection({
   database: 'freenode'
 });
 
-connection.connect();
+//connection.connect();
 
 var sql = "INSERT INTO `message` (`time`, `to`, `from`, `message`) VALUES ?";
 var channels = []
@@ -61,63 +61,12 @@ var client = new irc.Client('chat.freenode.net', 'sentiment', {
   channels: ['#sentiment', '#lsucompsci']
 });
 
-client.addListener('message', function (from, to, message) {
-  var ircMessage = [Date.now(), to, from, message];
-  messages.push(ircMessage);
-  console.log(to + ' => ' + from + ': ' + message);
-});
-
-client.addListener('error', function(message) {
-  console.error('ERROR: %s: %s', message.command, message.args.join(' '));
-  connection.query("INSERT INTO `error` (`time`, `command`, `args`) VALUES ?", [[[Date.now(), message.command, message.args.join(' ')]]], function(err) {
-    if (err) throw err;
-  });
-});
-
-client.addListener('message', function (from, to, message) {
-  console.log('%s => %s: %s', from, to, message);
-  if ( to.match(/^[#&]/) ) { // channel message
-    if ( message.match(/hello/i) ) {
-      client.say(to, 'Hello there ' + from);
-    }
-    if ( message.match(/dance/) ) {
-      setTimeout(function () { client.say(to, "\u0001ACTION dances: :D\\-<\u0001") }, 1000);
-      setTimeout(function () { client.say(to, "\u0001ACTION dances: :D|-<\u0001") }, 2000);
-      setTimeout(function () { client.say(to, "\u0001ACTION dances: :D/-<\u0001") }, 3000);
-      setTimeout(function () { client.say(to, "\u0001ACTION dances: :D|-<\u0001") }, 4000);
-    }
-  }
-  else { // private message
-  }
-});
-
-client.addListener('pm', function(nick, message) {
-  console.log('Got private message from %s: %s', nick, message);
-  client.say(nick, 'you told me' + message);
-});
-
-client.addListener('join', function(channel, who) {
-  console.log('%s has joined %s', who, channel);
-});
-
-client.addListener('part', function(channel, who, reason) {
-  console.log('%s has left %s: %s', who, channel, reason);
-});
-
-client.addListener('kick', function(channel, who, by, reason) {
-  console.log('%s was kicked from %s by %s: %s', who, channel, by, reason);
-});
-
-setTimeout(function(){
-  client.say('selby', 'hey selby');
-}, 30000);
-
-
 io.on('connection', function (socket) {
   var addedUser = false;
   // when the client emits 'new message', this listens and executes
   socket.on('new message', function (data) {
     // we tell the client to execute 'new message'
+    client.say('#sentiment', socket.username + "=> " + data);
     socket.broadcast.emit('new message', {
       username: socket.username,
       message: data
@@ -165,4 +114,69 @@ io.on('connection', function (socket) {
       });
     }
   });
+
+  client.addListener('message', function (from, to, message) {
+    //var ircMessage = [Date.now(), to, from, message];
+    //messages.push(ircMessage);
+    console.log(to + ' => ' + from + ': ' + message);
+    //if(to === '#sentiment')
+      socket.broadcast.emit('new message', {
+        username: from,
+        message: message
+      });
+    console.log('%s => %s: %s', from, to, message);
+    if ( to.match(/^[#&]/) ) { // channel message
+      if ( message.match(/hello/i) ) {
+        client.say(to, 'Hello there ' + from);
+      }
+      if ( message.match(/dance/) ) {
+        setTimeout(function () { client.say(to, "\u0001ACTION dances: :D\\-<\u0001") }, 1000);
+        setTimeout(function () { client.say(to, "\u0001ACTION dances: :D|-<\u0001") }, 2000);
+        setTimeout(function () { client.say(to, "\u0001ACTION dances: :D/-<\u0001") }, 3000);
+        setTimeout(function () { client.say(to, "\u0001ACTION dances: :D|-<\u0001") }, 4000);
+      }
+    }
+    else { // private message
+    }
+  });
+
+  client.addListener('join', function(channel, who) {
+    socket.emit('add user', who);
+    console.log('%s has joined %s', who, channel);
+  });
+
+  client.addListener('part', function(channel, who, reason) {
+    socket.broadcast.emit('user left', {
+      username: who,
+      numUsers: numUsers
+    });
+    console.log('%s has left %s: %s', who, channel, reason);
+  });
+
+  client.addListener('kick', function(channel, who, by, reason) {
+    socket.broadcast.emit('user left', {
+      username: who,
+      numUsers: numUsers
+    });
+    console.log('%s was kicked from %s by %s: %s', who, channel, by, reason);
+  });
+});
+
+setTimeout(function () { client.say("NickServ", "identify fmlsummmer2") }, 10000);
+
+
+
+
+client.addListener('error', function(message) {
+  console.error('ERROR: %s: %s', message.command, message.args.join(' '));
+  connection.query("INSERT INTO `error` (`time`, `command`, `args`) VALUES ?", [[[Date.now(), message.command, message.args.join(' ')]]], function(err) {
+    if (err) throw err;
+  });
+});
+
+
+
+client.addListener('pm', function(nick, message) {
+  console.log('Got private message from %s: %s', nick, message);
+  client.say(nick, 'you told me' + message);
 });
