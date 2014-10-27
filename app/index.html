@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Selby</title>
+    <title>selby.io</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     {{BASE_TAG}}
     <style>
       /* definition */
@@ -16,12 +15,12 @@
         font-weight: normal;
         font-style: bold;
       }
-
       @import url(https://fonts.googleapis.com/css?family=Raleway:400,200|Source+Code+Pro:400,300|Comfortaa:400,300);
     </style>
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/selby.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
   </head>
   <body data-spy="scroll" data-target=".nav-spy">
     <script>
@@ -32,7 +31,6 @@
     <script>
       window.Selby = require('selby/app')['default'].create({{APP_CONFIG}});
     </script>
-    <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
     <script async src="/main.js"></script>
   </body>
 </html>
