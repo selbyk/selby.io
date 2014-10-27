@@ -21,30 +21,35 @@ var sql = "INSERT INTO `message` (`time`, `to`, `from`, `message`) VALUES ?";
 var channels = []
 var messages = []
 
+// Start the server
 server.listen(port, function () {
 console.log('Server listening at port %d', port);
 });
 
-
+// Routing
+var compress = require('compression');
+app.use(compress());
 
 var bodyParser = require('body-parser')
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
+
 app.get('/deploy', function(req, res) {
     var body = 'Deployed';
     function puts(error, stdout, stderr) { res.send(body + '\n' + stdout); }
     exec("git pull && npm install && bower install && ember build && forever restart selby.io.js", puts);
 
 });
+
 app.post('/deploy', function(req, res) {
     var body = 'Deployed';
     function puts(error, stdout, stderr) { res.send(body + '\n' + stdout); }
     exec("git pull && npm install && bower install && ember build && forever restart selby.io.js", puts);
 
 });
-// Routing
+
 app.use(express.static(__dirname + '/dist'));
 // Chatroom
 // usernames which are currently connected to the chat
@@ -162,7 +167,7 @@ io.on('connection', function (socket) {
   });
 });
 
-setTimeout(function () { client.say("NickServ", "identify fmlsummmer2") }, 10000);
+setTimeout(function () { client.say("NickServ", "identify fmlsummmer2") }, 30000);
 
 
 
