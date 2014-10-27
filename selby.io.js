@@ -37,14 +37,6 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
-// a convenient variable to refer to the HTML directory
-var html_dir = './html/';
-
-// routes to serve the static HTML files
-app.get('/socket.io.min.js', function(req, res) {
-    res.sendfile('./bower_components/socket.io-client/socket.io.min.js');
-});
-
 app.get('/deploy', function(req, res) {
     var body = 'Deployed';
     function puts(error, stdout, stderr) { res.send(body + '\n' + stdout); }
@@ -120,19 +112,16 @@ io.on('connection', function (socket) {
     }
   });
 
-  var sendIrcMessages = function(){
-    setTimeout(function(){
-      tmpMessages = messages;
-      messages = [];
-      tmpMessages.forEach(function(message) {
-        socket.broadcast.emit('new message', {
-          username: message[2],
-          message: message[3]
-        });
+  setInterval(function(){
+    tmpMessages = messages;
+    messages = [];
+    tmpMessages.forEach(function(message) {
+      socket.broadcast.emit('new message', {
+        username: message[2],
+        message: message[3]
       });
-    }, 1000);
-    sendIrcMessages();
-  }();
+    });
+  }, 1000);
 });
 
 var client = new irc.Client('chat.freenode.net', 'sentiment', {
@@ -150,10 +139,6 @@ client.addListener('message', function (from, to, message) {
   messages.push(ircMessage);
   console.log(to + ' => ' + from + ': ' + message);
   //if(to === '#sentiment')
-    socket.broadcast.emit('new message', {
-      username: from,
-      message: message
-    });
   console.log('%s => %s: %s', from, to, message);
   if ( to.match(/^[#&]/) ) { // channel message
     if ( message.match(/hello/i) ) {
@@ -171,23 +156,14 @@ client.addListener('message', function (from, to, message) {
 });
 
 client.addListener('join', function(channel, who) {
-  socket.emit('add user', who);
   console.log('%s has joined %s', who, channel);
 });
 
 client.addListener('part', function(channel, who, reason) {
-  socket.broadcast.emit('user left', {
-    username: who,
-    numUsers: numUsers
-  });
   console.log('%s has left %s: %s', who, channel, reason);
 });
 
 client.addListener('kick', function(channel, who, by, reason) {
-  socket.broadcast.emit('user left', {
-    username: who,
-    numUsers: numUsers
-  });
   console.log('%s was kicked from %s by %s: %s', who, channel, by, reason);
 });
 
@@ -197,7 +173,6 @@ client.addListener('error', function(message) {
     if (err) throw err;
   });
 });
-
 
 client.addListener('pm', function(nick, message) {
   console.log('Got private message from %s: %s', nick, message);

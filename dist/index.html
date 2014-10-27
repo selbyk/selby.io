@@ -19,20 +19,20 @@
 
       @import url(https://fonts.googleapis.com/css?family=Raleway:400,200|Source+Code+Pro:400,300|Comfortaa:400,300);
     </style>
-    <link rel="stylesheet" href="assets/vendor-d41d8cd98f00b204e9800998ecf8427e.css">
-    <link rel="stylesheet" href="assets/selby-a312a71ce3a2a602f986e8a02ea6d2b1.css">
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/selby.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
   </head>
   <body data-spy="scroll" data-target=".nav-spy">
     <script>
-      window.EmberENV = {"modulePrefix":"selby","environment":"production","baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{}};
+      window.EmberENV = {"modulePrefix":"selby","environment":"development","baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{"LOG_ACTIVE_GENERATION":true,"LOG_VIEW_LOOKUPS":true}};
     </script>
-    <script src="assets/vendor-fc669d655297db859b9468f41226ec5a.js"></script>
-    <script src="assets/selby-55e54e9ae3804b2b495aff8c55e40428.js"></script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/selby.js"></script>
     <script>
-      window.Selby = require('selby/app')['default'].create({});
+      window.Selby = require('selby/app')['default'].create({"LOG_ACTIVE_GENERATION":true,"LOG_VIEW_LOOKUPS":true});
     </script>
-    <script src="/main-1ff000ef0fdbb6cf82d1555b5e994bd6.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+    <script src="/main.js"></script>
   </body>
 </html>
