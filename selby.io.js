@@ -37,6 +37,14 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 }));
 
+// a convenient variable to refer to the HTML directory
+var html_dir = './html/';
+
+// routes to serve the static HTML files
+app.get('/socket.io.min.js', function(req, res) {
+    res.sendfile('./bower_components/socket.io-client/socket.io.min.js');
+});
+
 app.get('/deploy', function(req, res) {
     var body = 'Deployed';
     function puts(error, stdout, stderr) { res.send(body + '\n' + stdout); }
