@@ -52,6 +52,12 @@ app.post('/deploy', function(req, res) {
 });
 
 app.use(express.static(__dirname + '/dist'));
+
+// This delegates all of the routes we haven't set to Ember.JS
+app.get('*', function(request, response) {
+  return response.sendfile('./dist/index.html');
+});
+
 // Chatroom
 // usernames which are currently connected to the chat
 var usernames = {};
