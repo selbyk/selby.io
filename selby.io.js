@@ -1,6 +1,8 @@
 // Setup basic express server
 var express = require('express');
 var app = express();
+var compress = require('compression');
+app.use(compress());
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var port = process.env.PORT || 8080;
@@ -15,21 +17,6 @@ var connection = mysql.createConnection({
   database: 'freenode'
 });
 
-io.configure('production', function(){
-        console.log(doodlr + " set config for production");
-        io.enable('browser client minification');  // send minified client
-        io.enable('browser client etag');          // apply etag caching logic based on version number
-        io.enable('browser client gzip');          // gzip the file
-        io.set('log level', 1);                    // reduce logging
-        io.set('transports', [                     // enable all transports (optional if you want flashsocket)
-            'websocket'
-          , 'flashsocket'
-          , 'htmlfile'
-          , 'xhr-polling'
-          , 'jsonp-polling'
-        ]);
-      });
-
 //connection.connect();
 
 var sql = "INSERT INTO `message` (`time`, `to`, `from`, `message`) VALUES ?";
@@ -42,8 +29,7 @@ console.log('Server listening at port %d', port);
 });
 
 // Routing
-var compress = require('compression');
-app.use(compress());
+
 
 var bodyParser = require('body-parser')
 app.use( bodyParser.json() );       // to support JSON-encoded bodies
@@ -82,6 +68,7 @@ var client = new irc.Client('chat.freenode.net', 'sentiment', {
 });
 
 io.on('connection', function (socket) {
+
   var addedUser = false;
   // when the client emits 'new message', this listens and executes
   socket.on('new message', function (data) {
