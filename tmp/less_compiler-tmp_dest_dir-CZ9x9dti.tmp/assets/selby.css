@@ -42,6 +42,7 @@ body {
 #chat {
   background-color: #fff;
   color: #000;
+  margin-bottom: 60px;
 }
 #top {
   padding-top: 5em;
@@ -97,13 +98,13 @@ ul {
 }
 /* Pages */
 .pages {
-  height: 100vh;
+  height: 75vh;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 .page {
-  height: 100vh;
+  height: 75vh;
   position: absolute;
   width: 100%;
 }
@@ -160,11 +161,11 @@ ul {
 }
 /* Messages */
 .chatArea {
-  height: 100vh;
+  height: 75vh;
   padding-bottom: 60px;
 }
 .messages {
-  height: 100%;
+  height: 50vh;
   margin: 0;
   overflow-y: scroll;
   padding: 10px 20px 10px 20px;
@@ -182,13 +183,9 @@ ul {
 /* Input */
 .inputMessage {
   border: 10px solid #000;
-  bottom: 0;
   height: 60px;
-  left: 0;
   outline: none;
   padding-left: 10px;
-  position: absolute;
-  right: 0;
   width: 100%;
 }
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
