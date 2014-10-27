@@ -1,1 +1,2 @@
-scp -r dist/* selby@know.selby.io:/srv/www/progress
+ember build --environment=production
+scp -r dist/* selby@know.selby.io:~/projects/selby.io/dist
