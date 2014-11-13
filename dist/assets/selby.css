@@ -51,7 +51,6 @@ hr {
 #chat {
   background-color: #fff;
   color: #000;
-  margin-bottom: 60px;
 }
 #top {
   padding-top: 5em;
@@ -64,6 +63,21 @@ hr {
   padding-top: 10em;
   background-color: #000;
   min-height: 100vh;
+}
+.drop {
+  -webkit-box-shadow: 3px 3px 10px 0px black;
+  -moz-box-shadow: 3px 3px 10px 0px black;
+  box-shadow: 3px 3px 10px 0px black;
+}
+.drop.container {
+  margin: 2em auto 2em auto;
+  min-height: 50vh;
+}
+.drop.container.dark {
+  background: #111820;
+}
+.drop.container {
+  margin: 2em auto 2em auto;
 }
 .wrapper {
   width: 100%;
@@ -107,13 +121,13 @@ ul {
 }
 /* Pages */
 .pages {
-  height: 75vh;
+  height: 100vh;
   margin: 0;
   padding: 0;
   width: 100%;
 }
 .page {
-  height: 75vh;
+  height: 100vh;
   position: absolute;
   width: 100%;
 }
