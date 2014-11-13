@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="font-size: 18px; padding: 0 5em;">
   <div class="navbar-header">
     <a class="navbar-brand logo" href="#">selby.io</a>
     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -10,12 +10,10 @@
   </div>
   <div class="nav-spy navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right" role="tablist">
+        <li><a href="#todo">Todo</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#interests">Interests</a></li>
-        <li><a href="#chat">Chat</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon ion-android-information" style="font-size: 18px; margin: 0 5px 0 10px;"></span><span class="caret" style="font-size: 18px;"></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">C.V.</a></li>
             <li>{{#link-to 'stats'}}Server Stats{{/link-to}}</li>
@@ -32,37 +30,43 @@
 
 {{outlet}}
 
-<div id="footer" class="wrapper section black">
-  <div class="container">
-    <div class="row">
-      <div class='col-xs-12 text-center'>
-          <p>...as simple as possible, but not simpler.</p>
-          <p>- Albert Einstein</p>
+<div id="footer" style="padding: 0;padding-top: 200px;margin: 0 auto 0 auto;">
+  <div class="container" style="padding: 0;margin: 0 auto 0 auto;height: 100vh;">
+    <div class="row" style="padding: 0;margin: 0;height: 34vh;">
+      <div class='col-xs-12 text-center' style="padding: 0;margin: 0;height: 34vh;">
+        <p style="padding: 0;margin: 0;height: 17vh;">...as simple as possible, but not simpler.</p>
+        <p style="height: 17vh;padding: 0;margin: 0;">- Albert Einstein</p>
+      </div>
     </div>
-    <div class="row">
-      <div class="col-xs-2 col-xs-offset-1 button linkedin"><a href="http://www.linkedin.com/pub/selby-kendrick/50/289/650" alt="LinkedIn"></a></div>
-      <div class="col-xs-2 button github"><a href="https://github.com/selbyk" alt="Github"></a></div>
-      <div class="col-xs-2 button lastfm"><a href="http://www.last.fm/user/n344853835" alt="Lastfm"></a></div>
-      <div class="col-xs-2 button email"><a href="mailto:selby.kendrick@gmail.com" alt="E-mail me"></a></div>
+    <div class="row row-centered text-center" style="height: 31vh;padding: 0;margin: 0;">
+      <a href="http://www.linkedin.com/pub/selby-kendrick/50/289/650" alt="LinkedIn">
+        <span class="col-xs-3 col-centered text-center">
+          <h1 style="padding: 0;margin: 0;"><i class="icon ion-social-linkedin"></i></h1>
+          <h4>LinkedIn</h4>
+        </span>
+      </a>
+      <a href="https://github.com/selbyk" alt="GitHub">
+        <span class="col-xs-3 col-centered text-center">
+          <h1 style="padding: 0;margin: 0;"><i class="icon ion-social-github"></i></h1>
+          <h4>GitHub</h4>
+        </span>
+      </a>
+      <a href="http://www.last.fm/user/n344853835" alt="Lastfm">
+        <span class="col-xs-3 col-centered text-center">
+          <h1 style="padding: 0;margin: 0;"><i class="icon ion-headphone"></i></h1>
+          <h4>Lastfm</h4>
+        </span>
+      </a>
+      <a href="mailto:selby.kendrick@gmail.com" alt="E-mail Me">
+        <span class="col-xs-3 col-centered text-center">
+          <h1 style="padding: 0;margin: 0;"><i class="icon ion-email"></i></h1>
+          <h4>E-mail Me</h4>
+        </span>
+      </a>
     </div>
-  <h4 class="text-center">&copy 2014 Selby Kendrick</h4>
-  <p class="text-center">You can find the source code to this page and some of my other projects on <a href="https://github.com/selbyk">GitHub</a></p>
+    <div class="row" style="height: 34vh;padding: 0;margin: 0;">
+      <h4 class="text-center" style="height: 17vh;padding: 0;margin: 0;">&copy 2014 Selby Kendrick</h4>
+      <p class="text-center" style="height: 17vh;padding: 0;margin: 0;">You can find the source to this page and some of my other projects on <a href="https://github.com/selbyk">GitHub</a>.</p>
+    </div>
   </div>
-</div>
-
-<div id="chat" class="section">
-  <ul class="pages">
-    <li class="chat page">
-      <div class="chatArea">
-        <ul class="messages"></ul>
-      </div>
-      <input class="inputMessage" placeholder="Type here..."/>
-    </li>
-    <li class="login page">
-      <div class="form">
-        <h3 class="title">What's your nickname?</h3>
-        <input class="usernameInput" type="text" maxlength="10" />
-      </div>
-    </li>
-  </ul>
 </div>

@@ -65,6 +65,32 @@ hr { border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgb
   background-color: #000;
   min-height: 100vh;
 }
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+.col-fixed {
+    /* custom width */
+    width:320px;
+}
+.col-min {
+    /* custom min width */
+    min-width:320px;
+}
+.col-max {
+    /* custom max width */
+    max-width:320px;
+}
+
+@import "charts";
 
 .drop {
 -webkit-box-shadow: 3px 3px 10px 0px black;
@@ -362,5 +388,3 @@ span.fa-angle-double-right {
     margin-top: 120px;
   }
 }
-
-@import "charts";
