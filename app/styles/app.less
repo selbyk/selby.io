@@ -64,6 +64,7 @@ hr { border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgb
   padding-top: 10em;
   background-color: #000;
   min-height: 100vh;
+  color: @gray-lighter;
 }
 /* centered columns styles */
 .row-centered {
@@ -92,20 +93,7 @@ hr { border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgb
 
 @import "charts";
 
-.drop {
--webkit-box-shadow: 3px 3px 10px 0px black;
--moz-box-shadow:    3px 3px 10px 0px black;
-box-shadow:         3px 3px 10px 0px black;
-}
 
-.drop.container {
-  margin: 2em auto 2em auto;
-  min-height: 50vh;
-}
-
-.drop.container.dark {
-  background: #111820;
-}
 
 .drop.container {
   margin: 2em auto 2em auto;
@@ -278,6 +266,19 @@ ul {
 @import "bower_components/bootstrap/less/bootstrap.less";
 @import "app/styles/superhero/variables.less";
 
+.drop {
+-webkit-box-shadow: 3px 3px 10px 0px black;
+-moz-box-shadow:    3px 3px 10px 0px black;
+box-shadow:         3px 3px 10px 0px black;
+}
+
+.container {
+  min-height: 50vh;
+}
+
+.drop.container.dark {
+  background: @gray-lighter;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
