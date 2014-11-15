@@ -10,18 +10,17 @@
   </div>
   <div class="nav-spy navbar-collapse collapse">
     <ul class="nav navbar-nav navbar-right" role="tablist">
-        <li><a href="#todo">Todo</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li>{{#link-to 'index'}}Todo{{/link-to}}</a></li>
+        <li>{{#link-to 'projects'}}Projects{{/link-to}}</li>
         <li>{{#link-to 'stack'}}My Stack{{/link-to}}</li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon ion-android-information" style="font-size: 18px; margin: 0 5px 0 10px;"></span><span class="caret" style="font-size: 18px;"></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="https://github.com/selbyk">Github</a></li>
             <li><a href="https://osrc.dfm.io/selbyk/">Osrc</a></li>
-            <li>{{#link-to 'stats'}}<s>Server Stats</s>{{/link-to}}</li>
             <li class="divider"></li>
+            <li>{{#link-to 'stats'}}<s>Server Stats</s>{{/link-to}}</li>
             <li><a href="#"><s>C.V.</s></a></li>
-            <li><a href="#footer">Credits</a></li>
           </ul>
         </li>
     </ul>
