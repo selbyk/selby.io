@@ -20,6 +20,7 @@ Router.map(function() {
   this.route('stats', {path: '/stats'});
   this.route('projects', {path: '/projects'});
   this.route('stack', {path: '/stack'});
+  this.route('todo', {path: '/todo'});
 });
 
 export default Router;
