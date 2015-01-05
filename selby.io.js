@@ -5,7 +5,7 @@ var compress = require('compression');
 app.use(compress());
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8282;
 var sys = require('sys');
 var exec = require('child_process').exec;
 var irc = require('irc');

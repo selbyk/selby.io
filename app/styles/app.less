@@ -1,4 +1,5 @@
 @import "app/styles/todo.less";
+@import "app/styles/bootstrap-revise.less";
 /* Fix user-agent */
 * {
   box-sizing: border-box;
@@ -15,7 +16,9 @@ html, body {
   font-family:
     "Arvo";
   font-weight: 200;
-  width: 100vw;
+  width: 100%;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/79/Fibonacci_spiral.svg") center fixed no-repeat;
+  background-size: contain;
 }
 
 .logo {
@@ -103,12 +106,9 @@ nav{
    text-shadow: 1px 0px 10px #FFFFFF;
    text-shadow: 1px 0px 10px #FFFFFF;
 }
-.drop.container {
-  margin: 2em auto 2em auto;
-}
 
 .wrapper {
-  width: 100%;
+  //width: 100%;
 }
 
 .black {
