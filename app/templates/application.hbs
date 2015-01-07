@@ -1,72 +1,98 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="font-size: 18px;">
-  <div class="navbar-header">
-    <a class="navbar-brand logo" href="#">selby.io</a>
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
+<a onclick="scroll(0,0)" href="#">
+  <div class="logo-backdrop">
+    <span class="logo-text logo-sm visible-xs">selby.io</span>
+    <span class="logo-text hidden-xs hidden-lg">selby.io</span>
+    <span class="logo-text logo-lg visible-lg">selby.io</span>
+    <h6>Top <span class="icon ion-chevron-up"> </span></h6>
   </div>
-  <div class="nav-spy navbar-collapse collapse">
-    <ul class="nav navbar-nav navbar-right" role="tablist">
-        <li>{{#link-to 'index'}}Todo{{/link-to}}</a></li>
-        <li>{{#link-to 'projects'}}Projects{{/link-to}}</li>
-        <li>{{#link-to 'stack'}}My Stack{{/link-to}}</li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="icon ion-android-information" style="font-size: 18px; margin: 0 5px 0 10px;"></span><span class="caret" style="font-size: 18px;"></a>
-          <ul class="dropdown-menu" role="menu">
-            <li>{{#link-to 'stats'}}<s>Server Stats</s>{{/link-to}}</li>
-            <li><a href="#"><s>C.V.</s></a></li>
-            <li class="divider"></li>
-            <li><a href="https://github.com/selbyk">Github</a></li>
-            <li><a href="https://osrc.dfm.io/selbyk/">OS Report Card</a></li>
-            <li><a href="http://amzn.com/w/1E0CW6S39FVMS">Wishlist</a></li>
-          </ul>
-        </li>
-    </ul>
+</a>
+
+<div class="container">
+  <h3><span class="icon ion-man"> Selby Kendrick </span><small>Full Stack Engineer <span class="date pull-right">{{moment date}}</span></small></h3>
+
+  <div class="row-fluid text-center">
+    <div class="col-xs-3">
+      {{#link-to 'index'}}
+        <h3><span class="icon ion-power"> </span></h3>
+        <h4>News</h4>
+      {{/link-to}}
+    </div>
+    <div class="col-xs-3">
+      {{#link-to 'todo'}}
+        <h3><span class="icon ion-navicon"> </span></h3>
+        <h4>Todo</h4>
+      {{/link-to}}
+    </div>
+    <div class="col-xs-3">
+      {{#link-to 'projects'}}
+        <h3><span class="icon ion-paper-airplane"> </span></h3>
+        <h4>Projects</h4>
+      {{/link-to}}
+    </div>
+    <div class="col-xs-3">
+      {{#link-to 'tools'}}
+        <h3><span class="icon ion-settings"> </span></h3>
+        <h4>Tools</h4>
+      {{/link-to}}
+    </div>
   </div>
-</nav>
-<!-- Brand and toggle get grouped for better mobile display -->
+
+  <div class="row-fluid text-center">
+      <a href="/resume.pdf"><span class="icon ion-document-text"> </span> Resume (WIP)</a> |
+      <a href="https://github.com/selbyk" target="_blank"><span class="icon ion-social-github"> </span> Github Profile</a> |
+      <a href="https://osrc.dfm.io/selbyk/" target="_blank"><span class="icon ion-code-working"> </span> Open Source Report Card</a> |
+      <a href="http://amzn.com/w/1E0CW6S39FVMS" target="_blank"><span class="icon ion-heart"> </span> Amazon Wishlist</a> |
+      {{#link-to 'stats'}}<s><span class="icon ion-arrow-graph-up-right"> </span> Server Stats (WIP)</s>{{/link-to}}
+  </div>
+</div>
 
 {{outlet}}
-<div id="footer" >
-  <div class="container" style="padding: 0;margin: 0 auto 0 auto;height: 100vh;">
-    <div class="row" style="padding: 0;margin: 0;height: 34vh;">
-      <div class='col-xs-12 text-center' style="padding: 0;margin: 0;height: 34vh;">
-        <p style="padding: 0;margin: 0;height: 17vh;">...as simple as possible, but not simpler.</p>
-        <p style="height: 17vh;padding: 0;margin: 0;">- Albert Einstein</p>
+
+<div id="copyright" class="text-center">
+  <div class="top">
+    <h4>...as simple as possible, but not simpler.</h4>
+    <br>
+    <h5>- Albert Einstein</h5>
+  </div>
+  <div class="middle container">
+      <div class="col-xs-3">
+        <a href="http://www.linkedin.com/pub/selby-kendrick/50/289/650" alt="LinkedIn" target="_blank">
+          <span>
+            <h3><i class="icon ion-social-linkedin"></i></h3>
+            <h4>LinkedIn</h4>
+          </span>
+        </a>
       </div>
-    </div>
-    <div class="row row-centered text-center" style="height: 31vh;padding: 0;margin: 0;">
-      <a href="http://www.linkedin.com/pub/selby-kendrick/50/289/650" alt="LinkedIn">
-        <span class="col-xs-3 col-centered text-center">
-          <h1 style="padding: 0;margin: 0;"><i class="icon ion-social-linkedin"></i></h1>
-          <h4>LinkedIn</h4>
-        </span>
-      </a>
-      <a href="https://github.com/selbyk" alt="GitHub">
-        <span class="col-xs-3 col-centered text-center">
-          <h1 style="padding: 0;margin: 0;"><i class="icon ion-social-github"></i></h1>
-          <h4>GitHub</h4>
-        </span>
-      </a>
-      <a href="http://www.last.fm/user/n344853835" alt="Lastfm">
-        <span class="col-xs-3 col-centered text-center">
-          <h1 style="padding: 0;margin: 0;"><i class="icon ion-headphone"></i></h1>
-          <h4>Lastfm</h4>
-        </span>
-      </a>
-      <a href="mailto:selby.kendrick@gmail.com" alt="E-mail Me">
-        <span class="col-xs-3 col-centered text-center">
-          <h1 style="padding: 0;margin: 0;"><i class="icon ion-email"></i></h1>
-          <h4>E-mail Me</h4>
-        </span>
-      </a>
-    </div>
-    <div class="row" style="height: 34vh;padding: 0;margin: 0;">
-      <h4 class="text-center" style="height: 17vh;padding: 0;margin: 0;">&copy 2014 Selby Kendrick</h4>
-      <p class="text-center" style="height: 17vh;padding: 0;margin: 0;">You can find the source to this page and some of my other projects on <a href="https://github.com/selbyk">GitHub</a>.</p>
-    </div>
+      <div class="col-xs-3">
+        <a href="https://github.com/selbyk" alt="GitHub" target="_blank">
+          <span>
+            <h3><i class="icon ion-social-github"></i></h3>
+            <h4>GitHub</h4>
+          </span>
+        </a>
+      </div>
+      <div class="col-xs-3">
+        <a href="http://www.last.fm/user/n344853835" alt="Lastfm" target="_blank">
+          <span>
+            <h3><i class="icon ion-headphone"></i></h3>
+            <h4>Lastfm</h4>
+          </span>
+        </a>
+      </div>
+      <div class="col-xs-3">
+        <a href="mailto:selby.kendrick@gmail.com" alt="E-mail Me" target="_blank">
+          <span>
+            <h3><i class="icon ion-email"></i></h3>
+            <h4>Email</h4>
+          </span>
+        </a>
+      </div>
+  </div>
+  <div class="bottom">
+    <h3>&copy 2014-{{moment date 'YYYY'}} Selby Kendrick</h3>
+    <br>
+    <h4>You can find the source to this page and some of my other projects on <a href="https://github.com/selbyk">GitHub</a>.</h4>
+    <br>
+    <h5><a href="https://developers.google.com/speed/pagespeed/insights/?url=selby.io&tab=desktop" target="_blank">How am I doing?</a></h5>
   </div>
 </div>

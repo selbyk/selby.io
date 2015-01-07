@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>selby.io</title>
-    <meta name="description" content="">
+    <meta name="description" content="A playground for ideas that can double as a showcase of my work.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
     <style>
@@ -17,10 +17,9 @@
       }
       @import url(http://fonts.googleapis.com/css?family=Arvo:400,400italic,700,700italic);
     </style>
-    <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/selby.css">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/vendor-d41d8cd98f00b204e9800998ecf8427e.css">
+    <link rel="stylesheet" href="assets/selby-04390bb4daa61bc043e003666266fde7.css">
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -32,13 +31,14 @@
     </script>
   </head>
   <body data-spy="scroll" data-target=".nav-spy">
+    <script src="assets/vendor-ac05405bb163d0606c37963926ef3109.js"></script>
+    <script src="assets/selby-3d12f1f94996428aa432f4312420b038.js"></script>
     <script>
-      window.EmberENV = {"modulePrefix":"selby","environment":"development","baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{"LOG_ACTIVE_GENERATION":true,"LOG_VIEW_LOOKUPS":true}};
+      window.EmberENV = {"modulePrefix":"selby","environment":"production","baseURL":"/","locationType":"auto","EmberENV":{"FEATURES":{}},"APP":{}};
     </script>
-    <script src="assets/vendor.js"></script>
-    <script src="assets/selby.js"></script>
+
     <script>
-      window.Selby = require('selby/app')['default'].create({"LOG_ACTIVE_GENERATION":true,"LOG_VIEW_LOOKUPS":true});
+      window.Selby = require('selby/app')['default'].create({});
     </script>
   </body>
 </html>

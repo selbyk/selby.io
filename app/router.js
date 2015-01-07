@@ -19,7 +19,7 @@ Router.map(function() {
   this.route('index', {path: '/'});
   this.route('stats', {path: '/stats'});
   this.route('projects', {path: '/projects'});
-  this.route('stack', {path: '/stack'});
+  this.route('tools', {path: '/tools'});
   this.route('todo', {path: '/todo'});
 });
 

@@ -1,10 +1,16 @@
 <div class="container">
-    <section id="todoapp">
-      <header id="header">
-        <h1>todos</h1>
-        <input type="text" id="new-todo" placeholder="What needs to be done?" />
-      </header>
+    <div class="page-header">
+      <h1><span class="icon ion-navicon"> </span> Todo <small> "Procrastination is opportunity's assassin."</small></h1>
+    </div>
+    <input type="text" id="new-todo" placeholder="What needs to be done?">
+    <h2 class="text-right">
+      <a href="#"><span class="icon ion-compose"> Edit</span></a>
+      <a href="#"><span class="icon ion-plus-round"> Add</span></a>
+    </h2>
+</div>
 
+<div class="container">
+    <section id="todoapp">
       <section id="main">
         <ul id="todo-list">
           <li class="completed">
@@ -20,37 +26,41 @@
             <label>Profit!</label><button class="destroy"></button>
           </li>
         </ul>
-
         <input type="checkbox" id="toggle-all">
       </section>
 
       <footer id="todo-footer">
         <span id="todo-count">
-          <strong>2</strong> todos left
+          <strong>2</strong> todos left  |
         </span>
-        <ul id="filters">
-          <li>
-            <a href="all" class="selected">All</a>
-          </li>
-          <li>
-            <a href="active">Active</a>
-          </li>
-          <li>
-            <a href="completed">Completed</a>
-          </li>
-        </ul>
+        <a href="all" class="selected"> All </a> |
+        <a href="active"> Active </a> |
+        <a href="completed"> Completed </a> |
+        <div id="filters">
+        </div>
 
         <button id="clear-completed">
           Clear completed (1)
         </button>
       </footer>
     </section>
-    <hr class="featurette-divider">
-    <p class="text-center">
-      Forked from
-      <a href="http://emberjs.com/guides/getting-started/planning-the-application/">
-        this official Ember tutorial.
-      </a>
-    </p>
-    <hr class="featurette-divider">
+</div>
+
+<div class="container">
+  <p class="text-center">
+    Forked from
+    <a href="http://emberjs.com/guides/getting-started/planning-the-application/">
+      this official Ember tutorial.
+    </a>
+  </p>
+</div>
+
+<div class="container">
+  <div class="page-header">
+    <h3>Real Todo</h3>
+  </div>
+  <ul>
+    <li><s>Add a project</s></li>
+    <li>Finish the {{#link-to 'todo'}}todo{{/link-to}} tutorial</li>
+  </ul>
 </div>

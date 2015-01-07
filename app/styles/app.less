@@ -1,5 +1,12 @@
+
+@light: rgba(255,255,255,.98);
+@dark: rgba(0,0,0,1);
+
+@white-trans: rgba(255,255,255,.98);
+
+@import "app/styles/loading.less";
 @import "app/styles/todo.less";
-@import "app/styles/bootstrap-revise.less";
+
 /* Fix user-agent */
 * {
   box-sizing: border-box;
@@ -10,28 +17,47 @@ html {
 }
 
 html, body {
-  margin-top: 53px;
-  padding: 0;
   position: relative;
   font-family:
     "Arvo";
   font-weight: 200;
   width: 100%;
-  background: url("https://upload.wikimedia.org/wikipedia/commons/7/79/Fibonacci_spiral.svg") center fixed no-repeat;
-  background-size: contain;
+  background: url("/img/golden_spiral.svg") center fixed no-repeat;
+  //background-size: contain;
+  background-size: 100% auto;
 }
 
-.logo {
+@import "app/styles/static.less";
+
+.logo-backdrop {
+  top: .5em;
+  right: .5em;
+  position: fixed;
+  padding: 8px;
+  text-align: center;
+  background: @white-trans;
+  //background-color: #93B3F0;
+  //border-color: #5C89DF;
+  border-radius: 25px;
+  //border: 1px solid #000000;
+  z-index: 99999999;
+}
+
+.logo-backdrop h6{
+  padding: 0;
+  margin: 0;
+}
+
+.logo-text {
   font-family: Solothurn;
-  font-size: 2em !important;
+  font-size: 2em;
   text-transform: lowercase;
   text-decoration: none;
   letter-spacing: 0em;
   word-spacing: 0em;
   line-height: 0.4;
-  display: block;
-  padding: 3px;
-  color: #F8F8F8;
+  //display: block;
+  color: #000000;
   word-break: break-all;
   word-wrap: break-word;
   background-color: transparent;
@@ -42,10 +68,75 @@ html, body {
   text-shadow: 3px 2px 3px #fff;
   text-shadow: -2px 3px 3px #fff;
   text-shadow: 3px -2px 3px #fff;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 0;
+  height: 40px;
 }
+
+.logo-sm {
+  font-size: 1em !important;
+  height: 10px;
+}
+
+.logo-lg {
+  font-size: 3em;
+}
+
+.logo-backdrop {
+  top: .5em;
+  right: .5em;
+  position: fixed;
+  padding: 8px;
+  text-align: center;
+  background: @white-trans;
+  //background-color: #93B3F0;
+  //border-color: #5C89DF;
+  border-radius: 25px;
+  //border: 1px solid #000000;
+  z-index: 99999999;
+}
+
+/* unvisited link */
+a:link .logo-backdrop {
+    color: #000000;
+}
+
+/* visited link */
+a:visited .logo-backdrop {
+    color: #000000;
+}
+
+/* mouse over link */
+a:hover .logo-backdrop {
+    color: #000000;
+}
+
+/* selected link */
+a:active .logo-backdrop {
+    color: #000000;
+}
+
+.logo {
+
+}
+
+.container.jumbotron {
+  background: @white-trans;
+}
+
+.container {
+  background: @white-trans;
+  margin: 3em;
+}
+
+.drop.container {
+  -webkit-box-shadow: inset 3px 3px 9px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 3px 3px 9px 0px rgba(0,0,0,0.75);
+  box-shadow: inset 3px 3px 9px 0px rgba(0,0,0,0.75);
+}
+
+#footer .container {
+  background: rgb(0,0,0);
+}
+
 
 /* Gradient transparent - color - transparent */
 hr { border: 0; height: 1px; background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); }
@@ -271,8 +362,6 @@ ul {
 }
 
 
-@import "bower_components/bootstrap/less/bootstrap.less";
-@import "app/styles/superhero/variables.less";
 
 .drop {
 -webkit-box-shadow: 3px 3px 10px 0px black;
@@ -281,7 +370,7 @@ box-shadow:         3px 3px 10px 0px black;
 }
 
 .container {
-  min-height: 50vh;
+  //min-height: 50vh;
 }
 
 .drop.container.dark {
@@ -399,4 +488,23 @@ span.fa-angle-double-right {
   .featurette-heading {
     margin-top: 120px;
   }
+}
+
+@import "bower_components/bootstrap/less/bootstrap.less";
+@import "app/styles/superhero/variables.less";
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }

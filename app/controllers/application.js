@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  setupController: function(controller, model) {
+    controller.set('model', {date: Date()});
+  },
   username: 'Guest' + Math.floor(Math.random() * (9999 - 1000)) + 1000,
   connection: false,
   typing: false,
@@ -38,7 +41,7 @@ export default Ember.Controller.extend({
     };
     var $currentInput = $usernameInput.focus();
 
-    var socket = io();
+    //var socket = io();
 
     function addParticipantsMessage (data) {
       var message = '';
@@ -239,7 +242,7 @@ export default Ember.Controller.extend({
     });
 
     // Socket events
-
+/*
     // Whenever the server emits 'login', log the login message
     socket.on('login', function (data) {
       connected = true;
@@ -277,6 +280,6 @@ export default Ember.Controller.extend({
     // Whenever the server emits 'stop typing', kill the typing message
     socket.on('stop typing', function (data) {
       removeChatTyping(data);
-    });
+    });*/
   }
 });
