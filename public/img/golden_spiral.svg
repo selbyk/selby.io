@@ -7,10 +7,34 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
    width="987.65967"
    height="610.99451"
-   id="svg2">
+   id="svg2"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="golden_spiral.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview18"
+     showgrid="false"
+     inkscape:zoom="58.283385"
+     inkscape:cx="2.6558208"
+     inkscape:cy="-1.7664419"
+     inkscape:window-x="2712"
+     inkscape:window-y="148"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -19,17 +43,19 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
      id="defs5" />
   <path
-     d="M 36.355438,2354.0146 A 301.58487,281.75464 0 0 1 337.94031,2072.26"
+     d="m 36.355438,2354.617 c 6e-6,-36.8816 7.849457,-74.3511 22.956794,-108.4252 15.107337,-34.0742 37.460671,-65.3286 65.375388,-91.4078 27.91471,-26.0792 61.36884,-46.9627 97.84117,-61.0767 36.47233,-14.114 75.93416,-21.4473 115.41152,-21.4473"
      transform="matrix(2.022351,0,0,2.164687,-73.02346,-4485.255)"
      id="path1873"
-     style="fill:none;stroke:#000000;stroke-width:0.95588177;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+     style="fill:none;stroke:#000000;stroke-width:0.95588177;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="csssc" />
   <path
      d="M 36.355438,2354.0146 A 301.58487,281.75464 0 0 1 337.94031,2072.26"
      transform="matrix(-1.247009,0,0,1.334775,1031.657,-2765.459)"

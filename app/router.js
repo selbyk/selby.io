@@ -19,8 +19,11 @@ Router.map(function() {
   this.route('index', {path: '/'});
   this.route('stats', {path: '/stats'});
   this.route('projects', {path: '/projects'});
-  this.route('tools', {path: '/tools'});
   this.route('todo', {path: '/todo'});
+  this.route('about', {path: '/about'});
+  this.resource('about', function () {
+    this.route('tools');
+  });
 });
 
 export default Router;
