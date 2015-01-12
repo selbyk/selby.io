@@ -13,16 +13,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
       //this.render('search.index');
     },*/
     model: function() {
-        var route = this;
         //alert("model");
-        return new Ember.RSVP.Promise(function(resolve, reject) {
-            $.getJSON('https://hacker-news.firebaseio.com/v0/topstories.json', function(stories) {
-                for (var i = 0; i < 30 + 1; i++) {
-                    route.store.find('item', stories[i]);
-                }
-                resolve(route.store.all('item'));
-            });
-        });
-        this._super(thing + ", sir!");
+        //return this.store.find('post');
     }
 });

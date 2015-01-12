@@ -8,7 +8,7 @@
 </a>
 
 <div class="container">
-  <h3><span class="icon ion-man"> Selby Kendrick </span><small>Full Stack Engineer <span class="date pull-right">{{moment date}}</span></small></h3>
+  <h3><span class="icon ion-man"> Selby Kendrick </span><small>Full Stack Engineer</h3>
 
   <div class="row-fluid text-center">
     <div class="col-xs-3">
@@ -18,15 +18,15 @@
       {{/link-to}}
     </div>
     <div class="col-xs-3">
-      {{#link-to 'todo'}}
-        <h3><span class="icon ion-navicon"> </span></h3>
-        <h4>Todo</h4>
+      {{#link-to 'posts'}}
+        <h3><span class="icon ion-chatbubble"> </span></h3>
+        <h4>Blog</h4>
       {{/link-to}}
     </div>
     <div class="col-xs-3">
-      {{#link-to 'projects'}}
-        <h3><span class="icon ion-paper-airplane"> </span></h3>
-        <h4>Projects</h4>
+      {{#link-to 'todo'}}
+        <h3><span class="icon ion-navicon"> </span></h3>
+        <h4>Todo</h4>
       {{/link-to}}
     </div>
     <div class="col-xs-3">
@@ -36,6 +36,7 @@
       {{/link-to}}
     </div>
   </div>
+
 </div>
 
 {{outlet}}

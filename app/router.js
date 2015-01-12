@@ -17,11 +17,15 @@ Router.reopen({
 
 Router.map(function() {
   this.route('index', {path: '/'});
+  this.resource('posts', {path: '/blog'}, function () {
+    this.route('new');
+    this.route('view', {path: '/:post_id'});
+  });
   this.route('stats', {path: '/stats'});
-  this.route('projects', {path: '/projects'});
   this.route('todo', {path: '/todo'});
   this.route('about', {path: '/about'});
   this.resource('about', function () {
+    this.route('projects');
     this.route('tools');
   });
 });

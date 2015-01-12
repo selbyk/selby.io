@@ -1,0 +1,7 @@
+{{#each}}
+  <div class="container">
+    <h4>
+      {{#link-to 'posts.view' id}}{{title}}{{/link-to}} <small> / {{ago created_at}}</small>
+    </h4>
+  </div>
+{{/each}}

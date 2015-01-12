@@ -1,0 +1,11 @@
+{
+  "dbName": "spare_hanger",
+  "dbUser": "spare_hanger" ,
+  "dbPassword": "mwb6ulg14eb8",
+  "connectionInfo": {
+    "dialect": "mysql",
+    "protocol": "mysql",
+    "port":     3306,
+    "host":    "localhost"
+  }
+}
