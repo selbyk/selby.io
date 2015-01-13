@@ -61,7 +61,7 @@ if (!global.hasOwnProperty('db')) {
 
     // the storage engine for sqlite
     // - default ':memory:'
-    storage: 'database.sqlite',
+    storage: 'var/db.sqlite',
 
     // disable inserting undefined values as NULL
     // - default: false

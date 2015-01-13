@@ -4,6 +4,11 @@ export default Ember.Controller.extend({
   setupController: function(controller, model) {
     controller.set('model', {date: Date()});
   },
+  actions: {
+    toTop: function(){
+      window.scrollTo(0, 0);
+    }
+  },
   username: 'Guest' + Math.floor(Math.random() * (9999 - 1000)) + 1000,
   connection: false,
   typing: false,
