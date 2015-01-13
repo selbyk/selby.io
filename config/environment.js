@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'selby',
+    modulePrefix: 'selby.io',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

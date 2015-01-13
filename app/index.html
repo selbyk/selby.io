@@ -6,7 +6,7 @@
     <title>selby.io</title>
     <meta name="description" content="I am a full time hacker who has a passion for finding creative, efficient, and elegant solutions to practical problems. This is a playground for ideas that can double as a showcase of my work.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{BASE_TAG}}
+    {{content-for 'head'}}
     <style>
       /* definition */
       @font-face {
@@ -19,7 +19,9 @@
     </style>
     <link href="//code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/selby.css">
+    <link rel="stylesheet" href="assets/selby.io.css">
+    <!--<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />-->
+    {{content-for 'head-footer'}}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -30,15 +32,13 @@
       ga('send', 'pageview');
     </script>
   </head>
-  <body data-spy="scroll" data-target=".nav-spy">
+  <body>
     <script src="assets/vendor.js"></script>
-    <script src="assets/selby.js"></script>
-    <script>
-      window.EmberENV = {{EMBER_ENV}};
-    </script>
+    <script src="assets/selby.io.js"></script>
+    {{content-for 'body'}}
 
-    <script>
-      window.Selby = require('selby/app')['default'].create({{APP_CONFIG}});
-    </script>
+
+
+    {{content-for 'body-footer'}}
   </body>
 </html>
