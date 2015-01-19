@@ -1,2 +1,8 @@
+export DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+export LOGFILE="$DIR/logs/ember-serve-production.log"
+cd $DIR
+touch $LOGFILE
 fuser -k 4200/tcp
-ember s --environment=production > logs/ember-serve.log 2>&1 &
+fuser -k 35729/tcp
+ember s --environment=production > $LOGFILE 2>&1 &
+echo "Reporting to $LOGFILE"

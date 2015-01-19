@@ -21,6 +21,10 @@ Router.map(function() {
     this.route('new');
     this.route('view', {path: '/:post_id'});
   });
+  this.resource('links', {path: '/links'}, function () {
+    this.route('new');
+    this.route('view', {path: '/:link_id'});
+  });
   this.route('stats', {path: '/stats'});
   this.route('todo', {path: '/todo'});
   this.route('about', {path: '/about'});

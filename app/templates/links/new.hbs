@@ -1,0 +1,11 @@
+<div class="container">
+    <h3><span class="icon ion-chatbubble"> </span> Ok, let's do this.</h3>
+    {{#em-form model=model submit_button=false}}
+        {{em-input label="Title" property="title"}}
+        {{em-input label="URL" property="url"}}
+        {{em-text label="Description" property="description" rows=5}}
+        <div class="form-actions">
+            <input {{bind-attr disabled=isntValid}} type="submit" class="btn" value="Create Link">
+        </div>
+    {{/em-form}}
+</div>

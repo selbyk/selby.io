@@ -110,6 +110,7 @@ if (!global.hasOwnProperty('db')) {
     sequelize: sequelize,
     user:      sequelize.import(__dirname + '/user'),
     post:      sequelize.import(__dirname + '/post'),
+    link:      sequelize.import(__dirname + '/link'),
     // add your other models here
   }
 

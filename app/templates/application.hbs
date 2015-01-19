@@ -8,7 +8,7 @@
 </button>
 
 <div class="container">
-  <h3><span class="icon ion-man"> Selby Kendrick </span><small>Full Stack Engineer</h3>
+  <h3><span class="icon ion-man"> Selby Kendrick </span><small class="pull-right">{{currentTime}}</small></h3>
 
   <div class="row-fluid text-center">
     <div class="col-xs-3">
@@ -36,7 +36,7 @@
       {{/link-to}}
     </div>
   </div>
-
+  <small class="pull-right">You've been here {{currentDuration}}.</small>
 </div>
 
 {{outlet}}

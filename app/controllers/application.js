@@ -1,15 +1,55 @@
 import Ember from 'ember';
 
+import { moment, ago } from 'ember-moment/computed';
+
 export default Ember.Controller.extend({
   setupController: function(controller, model) {
-    controller.set('model', {date: Date()});
+    controller.set('model', {});
   },
   actions: {
     toTop: function(){
       window.scrollTo(0, 0);
     }
   },
-  username: 'Guest' + Math.floor(Math.random() * (9999 - 1000)) + 1000,
+  duration: 1,
+  date: new Date(),
+  currentTimeMetronome: function() {
+    var interval = 1000/10;
+    Ember.run.later(this, function() {
+      this.notifyPropertyChange('currentTimePulse');
+      this.currentTimeMetronome();
+    }, interval);
+  }.on('init'),
+  currentTime: function() {
+    return Date().toString();
+  }.property('currentTimePulse'),
+  currentDuration: function() {
+    if(this.date){
+      var d = new Date();
+      var units = 'seconds';
+      var value = ((d.getTime()-this.date.getTime())/1000);
+      if(value > 60){
+        value = value/60;
+        if(value > 60){
+          value = value/60;
+          if(value > 24){
+            value = value/24;
+            units = 'days';
+          }else{
+            units = 'hours';
+          }
+        } else {
+          units = 'minutes';
+        }
+      }
+      return value.toFixed(2) + " " + units;
+    }
+    else{
+      return "0 seconds";
+    }
+  }.property('currentTimePulse'),
+  sMoment: moment('date', 'YYYY.MM.DD h:mm:ss'),
+  /*username: 'Guest' + Math.floor(Math.random() * (9999 - 1000)) + 1000,
   connection: false,
   typing: false,
   lastTypingTime: null,
@@ -247,7 +287,7 @@ export default Ember.Controller.extend({
     });
 
     // Socket events
-/*
+
     // Whenever the server emits 'login', log the login message
     socket.on('login', function (data) {
       connected = true;
@@ -285,6 +325,6 @@ export default Ember.Controller.extend({
     // Whenever the server emits 'stop typing', kill the typing message
     socket.on('stop typing', function (data) {
       removeChatTyping(data);
-    });*/
-  }
+    });
+  }*/
 });
