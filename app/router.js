@@ -19,6 +19,7 @@ Router.map(function() {
   this.route('index', {path: '/'});
   this.resource('posts', {path: '/blog'}, function () {
     this.route('new');
+    this.route('edit', { path: '/:post_id/edit' });
     this.route('view', {path: '/:post_id'});
   });
   this.resource('links', {path: '/links'}, function () {
