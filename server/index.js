@@ -8,12 +8,15 @@ var sys = require('sys');
 var exec = require('child_process').exec;
 //var irc = require('irc');
 //var mysql      = require('mysql');
+passport = require("passport");
+LocalStrategy = require('passport-local').Strategy;
 
 var bodyParser = require('body-parser');
 var globSync   = require('glob').sync;
 var http = require('http'), // node's http system
   db = require('./models'); // Sequelize!
 //var routes     = globSync('./routes/*.js', { cwd: __dirname }).map(require);
+var routes     = globSync('./routes/**/*.js', { cwd: __dirname }).map(require);
 
 var config = {
   sequelizeJsonApi: {
@@ -71,6 +74,8 @@ var setupExpress = function(expressApp){
 var setupRouting = function(expressApp, apiRoutes){
   // Use api routes
   expressApp.use('/api/v1', apiRoutes);
+  
+  routes.forEach(function(route) { route(expressApp); });
   //expressApp.use('/docs', express.static(__dirname + '/public/docs'));
   // don't throw a 404, just send index.html.  ususally a good idea.
   /*expressApp.get('*', function(request, response){

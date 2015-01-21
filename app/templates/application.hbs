@@ -8,29 +8,38 @@
 </button>
 
 <div class="container">
+  <small class="pull-right">
+    {{#if session.isAuthenticated}}
+      <a {{ action 'invalidateSession' }}>Logout</a>
+    {{else}}
+      {{#link-to 'login'}}Login{{/link-to}}
+    {{/if}}
+  </small>
+
+
   <h3><span class="icon ion-man"> Selby Kendrick </span><small class="pull-right">{{currentTime}}</small></h3>
 
   <div class="row-fluid text-center">
     <div class="col-xs-3">
-      {{#link-to 'index'}}
+      {{#link-to 'index' class='navigation'}}
         <h3><span class="icon ion-power"> </span></h3>
         <h4>News</h4>
       {{/link-to}}
     </div>
     <div class="col-xs-3">
-      {{#link-to 'posts'}}
+      {{#link-to 'posts' class='navigation'}}
         <h3><span class="icon ion-chatbubble"> </span></h3>
         <h4>Blog</h4>
       {{/link-to}}
     </div>
     <div class="col-xs-3">
-      {{#link-to 'todo'}}
+      {{#link-to 'todo' class='navigation'}}
         <h3><span class="icon ion-navicon"> </span></h3>
         <h4>Todo</h4>
       {{/link-to}}
     </div>
     <div class="col-xs-3">
-      {{#link-to 'about'}}
+      {{#link-to 'about' class='navigation'}}
         <h3><span class="icon ion-information-circled"> </span></h3>
         <h4>About</h4>
       {{/link-to}}

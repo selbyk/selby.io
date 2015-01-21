@@ -5,7 +5,13 @@
       <small>
         Some things I say
       </small>
+
     </h2>
+    <h4 class="text-right">
+      {{#if session.isAuthenticated}}
+        {{#link-to 'posts.new'}}<span class="icon ion-plus"> New</span>{{/link-to}}
+      {{/if}}
+    </h4>
   </div>
 </div>
 

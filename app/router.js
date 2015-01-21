@@ -17,6 +17,7 @@ Router.reopen({
 
 Router.map(function() {
   this.route('index', {path: '/'});
+  this.route('login');
   this.resource('posts', {path: '/blog'}, function () {
     this.route('new');
     this.route('edit', { path: '/:post_id/edit' });
