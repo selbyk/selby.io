@@ -1,51 +1,53 @@
-<button {{action 'toTop'}}>
-  <div class="logo-backdrop">
-    <span class="logo-text logo-sm visible-xs">selby.io</span>
-    <span class="logo-text hidden-xs hidden-lg">selby.io</span>
-    <span class="logo-text logo-lg visible-lg">selby.io</span>
-    <h6>Top <span class="icon ion-chevron-up"> </span></h6>
+<div class="container top">
+  <h1 class="name-tag hidden">
+    <span class="icon ion-man"> Selby Kendrick</span>
+  </h1>
+  <div class="col-xs-4">
+    <button class="logo-backdrop" {{action 'toTop'}}>
+        <span class="logo-text logo-sm visible-xs">selby.io</span>
+        <span class="logo-text hidden-xs hidden-lg">selby.io</span>
+        <span class="logo-text logo-lg visible-lg">selby.io</span>
+        <h6>Top <span class="icon ion-chevron-up"> </span></h6>
+    </button>
   </div>
-</button>
-
-<div class="container">
-  <small class="pull-right">
-    {{#if session.isAuthenticated}}
-      <a {{ action 'invalidateSession' }}>Logout</a>
-    {{else}}
-      {{#link-to 'login'}}Login{{/link-to}}
-    {{/if}}
-  </small>
-
-
-  <h3><span class="icon ion-man"> Selby Kendrick </span><small class="pull-right">{{currentTime}}</small></h3>
-
-  <div class="row-fluid text-center">
-    <div class="col-xs-3">
+  <div class="row pull-right">
+    <div class="col-xs-3 col-sm-3 text-center">
       {{#link-to 'index' class='navigation'}}
         <h3><span class="icon ion-power"> </span></h3>
-        <h4>News</h4>
+        <h6>News</h6>
       {{/link-to}}
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-3 col-sm-3 text-center">
       {{#link-to 'posts' class='navigation'}}
         <h3><span class="icon ion-chatbubble"> </span></h3>
-        <h4>Blog</h4>
+        <h6>Blog</h6>
       {{/link-to}}
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-3 col-sm-3 text-center">
       {{#link-to 'todo' class='navigation'}}
         <h3><span class="icon ion-navicon"> </span></h3>
-        <h4>Todo</h4>
+        <h6>Todo</h6>
       {{/link-to}}
     </div>
-    <div class="col-xs-3">
+    <div class="col-xs-3 col-sm-3 text-center">
       {{#link-to 'about' class='navigation'}}
         <h3><span class="icon ion-information-circled"> </span></h3>
-        <h4>About</h4>
+        <h6>About</h6>
       {{/link-to}}
     </div>
   </div>
-  <small class="pull-right">You've been here {{currentDuration}}.</small>
+  <div class="row clearfix"></div>
+  <div class="row col-xs-12">
+    <small>{{currentTime}}</small>
+    <small class="hidden-xs">You've been here {{currentDuration}}.</small>
+    <small class="pull-right">
+      {{#if session.isAuthenticated}}
+        <a {{ action 'invalidateSession' }}>Logout</a>
+      {{else}}
+        {{#link-to 'login'}}Login{{/link-to}}
+      {{/if}}
+    </small>
+  </div>
 </div>
 
 {{outlet}}

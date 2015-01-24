@@ -1,3 +1,4 @@
+source .config/aws-config.sh
 export DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 export LOGFILE="$DIR/logs/ember-serve-production.log"
 cd $DIR

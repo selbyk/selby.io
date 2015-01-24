@@ -17,21 +17,19 @@
 */
 //========================================================================================
 
-
-
 if (!global.hasOwnProperty('db')) {
   var Sequelize = require('sequelize'),
       fs = require('fs'),
       sequelize = null
 
-  var dbInfo = JSON.parse(fs.readFileSync('./config/database.json', 'utf8'));
+  var dbInfo = JSON.parse(fs.readFileSync('./config/database.json', 'utf8')).development;
 
-  sequelize = new Sequelize(dbInfo.dbName, dbInfo.dbUser, dbInfo.dbPassword, {
+  sequelize = new Sequelize(dbInfo.database, dbInfo.username, dbInfo.password, {
     // custom host; default: localhost
-    host: dbInfo.connectionInfo.host,
+    host: dbInfo.host,
 
     // custom port; default: 3306
-    port: dbInfo.connectionInfo.port,
+    port: dbInfo.port,
 
     // custom protocol
     // - default: 'tcp'
@@ -48,7 +46,7 @@ if (!global.hasOwnProperty('db')) {
     // the sql dialect of the database
     // - default is 'mysql'
     // - currently supported: 'mysql', 'sqlite', 'postgres', 'mariadb'
-    dialect: 'sqlite',
+    dialect: dbInfo.dialect,
 
     // you can also pass any dialect options to the underlying dialect library
     // - default is empty
@@ -61,7 +59,7 @@ if (!global.hasOwnProperty('db')) {
 
     // the storage engine for sqlite
     // - default ':memory:'
-    storage: 'var/db.sqlite',
+    storage: dbInfo.storage,
 
     // disable inserting undefined values as NULL
     // - default: false
@@ -111,6 +109,7 @@ if (!global.hasOwnProperty('db')) {
     user:      sequelize.import(__dirname + '/user'),
     post:      sequelize.import(__dirname + '/post'),
     link:      sequelize.import(__dirname + '/link'),
+    file:      sequelize.import(__dirname + '/file'),
     // add your other models here
   }
 

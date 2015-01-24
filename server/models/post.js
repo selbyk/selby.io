@@ -30,6 +30,7 @@ module.exports = function(sequelize, DataTypes){
   return sequelize.define("post", {
     title: DataTypes.STRING,
     content: DataTypes.TEXT,
+    private: DataTypes.BOOLEAN,
     created_at: DataTypes.DATE,
     updated_at: DataTypes.DATE
   })

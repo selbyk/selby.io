@@ -1,7 +1,22 @@
-{{#each}}
-  <div class="container">
-    <h4>
-      {{#link-to 'posts.view' id}}{{title}}{{/link-to}} <small> / {{ago created_at}}</small>
-    </h4>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h4><span class="icon ion-navicon"> </span> Posts</h4>
+    </div>
+    <div class="col-md-6">
+    </div>
   </div>
-{{/each}}
+  {{#each}}
+    <h4>
+      {{#link-to 'posts.view' id}}{{title}}{{/link-to}}
+      <small>
+      / {{ago created_at}}
+      {{#if private}}
+        <span class="label label-danger">Private</span>
+      {{else}}
+        <span class="label label-success">New</span>
+      {{/if}}
+      </small>
+    </h4>
+  {{/each}}
+</div>

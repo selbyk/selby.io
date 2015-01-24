@@ -4,6 +4,7 @@
         <h4><span class="icon ion-plus"> </span> Ok, let's do this.</h4>
         {{#em-form model=model submit_button=false}}
             {{em-input label="Title" property="title"}}
+            {{em-checkbox label="Private?" property="private"}}
             {{em-text label="Content" property="content" rows=5}}
             <div class="form-actions">
                 <input {{bind-attr disabled=isntValid}} type="submit" class="btn" value="Post">

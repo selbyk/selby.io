@@ -1,3 +1,45 @@
+.container.top {
+  margin-top: 0;
+  z-index: 10000;
+}
+
+.top-nav {
+  margin-top: 0px;
+}
+
+h1.name-tag {
+  margin-top: 0;
+}
+
+h1.name-tag span {
+  position: relative;
+  background: white;
+  top: .15em;
+  left: -0.15em;
+    width: 0.5em;
+    /* For Safari 3.1 to 6.0 */
+    -webkit-transition-property: width;
+    -webkit-transition-duration: 1s;
+    -webkit-transition-timing-function: linear;
+    -webkit-transition-delay: 0s;
+    /* Standard syntax */
+    transition-property: width;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+}
+
+h1.name-tag span:hover {
+    width: 10em;
+}
+
+div.top-nav div h3 {
+  margin-top: 0;
+}
+
 #copyright{
   position: absolute;
   height: 100vh;

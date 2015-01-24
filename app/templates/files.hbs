@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="page-header">
+    <h2><span class="icon ion-folder"> </span> Files</h2>
+  </div>
+  <h4 class="text-right">
+    {{#link-to 'files.index'}}<span class="icon ion-navicon"> All Files</span>{{/link-to}}
+    {{#if session.isAuthenticated}}
+      {{#link-to 'files.new'}}<span class="icon ion-plus"> New</span>{{/link-to}}
+    {{/if}}
+  </h4>
+</div>
+
+{{outlet}}

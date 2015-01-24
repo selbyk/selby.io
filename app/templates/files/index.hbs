@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="table-responsive">
+    <table class="table">
+      <tr>
+        <th>id</th>
+        <th>size</th>
+        <th>path</th>
+        <th>type</th>
+        <th>name</th>
+        <th>encoding</th>
+        <th>description</th>
+        <th>private</th>
+        <th>created_at</th>
+        <th>updated_at</th>
+      </tr>
+      {{#each model}}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{size}}</td>
+          <td>{{path}}</td>
+          <td>{{type}}</td>
+          <td>{{name}}</td>
+          <td>{{encoding}}</td>
+          <td>{{description}}</td>
+          <td>{{private}}</td>
+          <td>{{created_at}}</td>
+          <td>{{updated_at}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>

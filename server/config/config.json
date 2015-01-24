@@ -6,7 +6,7 @@
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "sqlite",
-    "storage": "var/db.sqlite"
+    "storage": "../var/db.sqlite"
   },
   "test": {
     "username": "selby",
