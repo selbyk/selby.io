@@ -6,7 +6,7 @@ module.exports = function(app, db) {
 
     if (req.body.grant_type === 'password') {
       if (req.body.username === 'selby' && req.body.password === 'b91d6aeb736d7325a62407f3c0c6ee55147d090f6144157ce0a0da58c0aecffe') {
-        res.send({ access_token: process.env.AWS_ACCESS_KEY });
+        res.send({ access_token: process.env.AWS_ACCESS_KEY_ID });
       } else {
         res.status(400).send({ error: 'invalid_grant' });
       }

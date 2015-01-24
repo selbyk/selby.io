@@ -7,16 +7,23 @@
     </div>
   </div>
   {{#each}}
-    <h4>
-      {{#link-to 'posts.view' id}}{{title}}{{/link-to}}
-      <small>
-      / {{ago created_at}}
-      {{#if private}}
-        <span class="label label-danger">Private</span>
-      {{else}}
-        <span class="label label-success">New</span>
+    {{#if private}}
+      {{#if session.isAuthenticated}}
+        <h4>
+          {{#link-to 'posts.view' id}}{{title}}{{/link-to}}
+          <small>
+          / {{ago created_at}}
+          <span class="label label-danger">Private</span>
+          </small>
+        </h4>
       {{/if}}
-      </small>
-    </h4>
+    {{else}}
+      <h4>
+        {{#link-to 'posts.view' id}}{{title}}{{/link-to}}
+        <small>
+        / {{ago created_at}}
+        </small>
+      </h4>
+    {{/if}}
   {{/each}}
 </div>
