@@ -13,25 +13,25 @@
   <div class="row pull-right">
     <div class="col-xs-3 col-sm-3 text-center">
       {{#link-to 'index' class='navigation'}}
-        <h3><span class="icon ion-power"> </span></h3>
+        <h3><span class="mega-octicon octicon-terminal"> </span></h3>
         <h6>News</h6>
       {{/link-to}}
     </div>
     <div class="col-xs-3 col-sm-3 text-center">
       {{#link-to 'posts' class='navigation'}}
-        <h3><span class="icon ion-chatbubble"> </span></h3>
+        <h3><span class="mega-octicon octicon-comment"> </span></h3>
         <h6>Blog</h6>
       {{/link-to}}
     </div>
     <div class="col-xs-3 col-sm-3 text-center">
       {{#link-to 'todo' class='navigation'}}
-        <h3><span class="icon ion-navicon"> </span></h3>
+        <h3><span class="mega-octicon octicon-checklist"> </span></h3>
         <h6>Todo</h6>
       {{/link-to}}
     </div>
     <div class="col-xs-3 col-sm-3 text-center">
       {{#link-to 'about' class='navigation'}}
-        <h3><span class="icon ion-information-circled"> </span></h3>
+        <h3><span class="mega-octicon octicon-info"> </span></h3>
         <h6>About</h6>
       {{/link-to}}
     </div>
@@ -58,45 +58,18 @@
     <br>
     <h5>- Albert Einstein</h5>
   </div>
-  <div class="middle container">
-      <div class="col-xs-3">
-        <a href="http://www.linkedin.com/pub/selby-kendrick/50/289/650" alt="LinkedIn" target="_blank">
-          <span>
-            <h3><i class="icon ion-social-linkedin"></i></h3>
-            <h4>LinkedIn</h4>
-          </span>
-        </a>
-      </div>
-      <div class="col-xs-3">
-        <a href="https://github.com/selbyk" alt="GitHub" target="_blank">
-          <span>
-            <h3><i class="icon ion-social-github"></i></h3>
-            <h4>GitHub</h4>
-          </span>
-        </a>
-      </div>
-      <div class="col-xs-3">
-        <a href="http://www.last.fm/user/n344853835" alt="Lastfm" target="_blank">
-          <span>
-            <h3><i class="icon ion-headphone"></i></h3>
-            <h4>Lastfm</h4>
-          </span>
-        </a>
-      </div>
-      <div class="col-xs-3">
-        <a href="mailto:selby.kendrick@gmail.com" alt="E-mail Me" target="_blank">
-          <span>
-            <h3><i class="icon ion-email"></i></h3>
-            <h4>Email</h4>
-          </span>
-        </a>
-      </div>
+  <div class="middle">
+    <h1>
+      {{#link-to 'map'}}
+        <span class="ionicons ion-map"> Site Map</span>
+      {{/link-to}}
+    </h1>
   </div>
   <div class="bottom">
     <h3>&copy 2014-{{moment date 'YYYY'}} Selby Kendrick</h3>
     <br>
     <h4>You can find the source to this page and some of my other projects on <a href="https://github.com/selbyk"><span class="icon ion-social-github"></span> GitHub</a>.</h4>
     <br>
-    <h5><a href="https://developers.google.com/speed/pagespeed/insights/?url=selby.io&tab=desktop" target="_blank">How am I doing?</a></h5>
+    <h4><a href="https://developers.google.com/speed/pagespeed/insights/?url=selby.io&tab=desktop" target="_blank">How am I doing?</a></h5>
   </div>
 </div>

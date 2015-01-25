@@ -17,4 +17,18 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+// Import Font Awesome font files
+app.import("bower_components/octicons/octicons/octicons.eot", {
+  destDir: "fonts"
+});
+app.import("bower_components/octicons/octicons/octicons.svg", {
+  destDir: "fonts"
+});
+app.import("bower_components/octicons/octicons/octicons.ttf", {
+  destDir: "fonts"
+});
+app.import("bower_components/octicons/octicons/octicons.woff", {
+  destDir: "fonts"
+});
+
 module.exports = app.toTree();

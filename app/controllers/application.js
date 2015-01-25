@@ -42,7 +42,7 @@ export default Ember.Controller.extend({
           units = 'minutes';
         }
       }
-      return value.toFixed(2) + " " + units;
+      return value.toFixed(0) + " " + units;
     }
     else{
       return "0 seconds";

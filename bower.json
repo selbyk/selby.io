@@ -18,5 +18,8 @@
     "emberfire": "~1.3.2",
     "ember-simple-auth": "0.7.2",
     "ember-uploader": "0.3.0"
+  },
+  "devDependencies": {
+    "octicons": "~2.1.2"
   }
 }

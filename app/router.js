@@ -19,6 +19,8 @@ Router.map(function() {
     path: "/"
   });
 
+  this.route("map");
+
   this.route("login");
 
 
