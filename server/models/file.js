@@ -4,6 +4,7 @@ module.exports = function(sequelize, DataTypes){
     path: DataTypes.STRING,
     type: DataTypes.STRING,
     name: DataTypes.STRING,
+    etag: DataTypes.STRING,
     encoding: DataTypes.STRING,
     description: DataTypes.TEXT,
     url: DataTypes.STRING,

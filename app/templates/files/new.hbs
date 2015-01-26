@@ -1,4 +1,11 @@
 <div class="container">
   New
   {{file-upload url="/api/file/upload"}}
+  {{s3-upload url="/api/file/sign"}}
+
+  {{progressPercent}}
+
+  {{progress-bar
+    percent=progressPercent
+    classNames="progress-striped"}}
 </div>
