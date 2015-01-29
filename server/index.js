@@ -45,7 +45,7 @@ var setupExpress = function(expressApp){
     extended: true
   }));
   expressApp.use(busboy());
-  expressApp.use( cors() ); // cors enables cross site scripting
+  expressApp.use( cors({allowedHeaders: ['Content-Type', 'Authorization']}));
   return expressApp;
 }
 

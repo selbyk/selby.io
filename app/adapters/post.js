@@ -3,5 +3,5 @@ import DS from 'ember-data';
 
 export default DS.RESTAdapter.extend({
   namespace: 'api',
-  host: 'http://selby.io'
+  //host: 'http://selby.io'
 });
