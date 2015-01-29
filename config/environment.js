@@ -20,7 +20,8 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:oauth2-bearer'
+    authorizer: 'simple-auth-authorizer:oauth2-bearer',
+    store: 'simple-auth-session-store:local-storage'
   };
 
   ENV['simple-auth-oauth2'] = {
