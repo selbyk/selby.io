@@ -35,7 +35,10 @@ module.exports = function(app, db) {
         db.post.findAll({
           where: {
             private: false
-          }
+          },
+          order: [
+            ['created_at', 'DESC']
+          ]
         }).success(function(posts){
           send(posts);
         })
