@@ -1,22 +1,3 @@
-//========================================================================================
-/*
-/* FILE NAME: Modules/Index.js
-/*
-/* DESCRIPTION: Main application file for LSU Scheduler.
-/*              Execute with 'node index.js'
-/*              Options:`stream` defaulting to _stdout_ // options here?
-/*
-/* AUTHORS: Chester Schofield
-/*
-/* REFERENCE:
-/*
-/* DATE BY CHANGE DESCRIPTION
-/* ======== ======= ===========
-/* 11/17/2014 Chester Added base comments
-/*
-*/
-//========================================================================================
-
 if (!global.hasOwnProperty('db')) {
   var Sequelize = require('sequelize'),
       fs = require('fs'),

@@ -1,7 +1,7 @@
-{{#each}}
+{{#each link in model}}
   <div class="container">
     <h4>
-      {{title}} <small> / {{ago created_at}}</small>
+      {{link.title}} <small> / {{ago link.created_at}}</small>
     </h4>
   </div>
 {{/each}}

@@ -20,6 +20,27 @@ export default Ember.Controller.extend({
       this.currentTimeMetronome();
     }, interval);
   }.on('init'),
+  fetchStatsMetronome: function() {
+    var interval = 2500;
+    Ember.run.later(this, function() {
+      this.notifyPropertyChange('fetchStatsPulse');
+      this.fetchStatsMetronome();
+    }, interval);
+  }.on('init'),
+  stats: function() {
+    //console.log('STAT!');
+    var stat = {};
+    $.ajax({
+      url: '/api/stats',
+      async: false,
+      dataType: 'json',
+      success: function (json) {
+        stat = json.stats;
+      }
+    });
+    //console.log(stat);
+    return stat;
+  }.property('fetchStatsPulse'),
   currentTime: function() {
     return Date().toString();
   }.property('currentTimePulse'),

@@ -13,18 +13,18 @@
         <th>created_at</th>
         <th>updated_at</th>
       </tr>
-      {{#each model}}
+      {{#each file in model}}
         <tr>
-          <td>{{id}}</td>
-          <td>{{size}}</td>
-          <td>{{path}}</td>
-          <td>{{type}}</td>
-          <td>{{name}}</td>
-          <td>{{encoding}}</td>
-          <td>{{url}}</td>
-          <td>{{private}}</td>
-          <td>{{created_at}}</td>
-          <td>{{updated_at}}</td>
+          <td>{{file.id}}</td>
+          <td>{{file.size}}</td>
+          <td>{{file.path}}</td>
+          <td>{{file.type}}</td>
+          <td>{{file.name}}</td>
+          <td>{{file.encoding}}</td>
+          <td>{{file.url}}</td>
+          <td>{{file.private}}</td>
+          <td>{{file.created_at}}</td>
+          <td>{{file.updated_at}}</td>
         </tr>
       {{/each}}
     </table>
