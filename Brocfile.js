@@ -40,4 +40,6 @@ app.import({
   production:  'bower_components/ember/d3.min.js'
 });
 
+app.import("bower_components/bootstrap-less/js/dropdown.js");
+
 module.exports = app.toTree();
