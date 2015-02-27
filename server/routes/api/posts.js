@@ -45,7 +45,7 @@ module.exports = function(app, db) {
     }
   })
 
-    app.put('/api/posts/:post_id', function(req, res) {
+    app.get('/api/posts/:post_id', function(req, res) {
       var auth_level = 0;
       if(req.headers.authorization)
       {
@@ -70,8 +70,8 @@ module.exports = function(app, db) {
 
       switch(auth_level){
         case 9001:
-          db.post.update(req.body.post,{where: {id: req.params.post_id}}).success(function(posts){
-            send(posts);
+          db.post.find({where: {id: req.params.post_id}}).success(function(post){
+            send(post);
           })
         break;
         default:
