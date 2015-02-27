@@ -35,9 +35,28 @@ app.import("bower_components/octicons/octicons/octicons.woff", {
   destDir: "fonts"
 });
 
+// Import Font Awesome font files
+app.import("bower_components/ionicons/fonts/ionicons.eot", {
+  destDir: "fonts"
+});
+app.import("bower_components/ionicons/fonts/ionicons.svg", {
+  destDir: "fonts"
+});
+app.import("bower_components/ionicons/fonts/ionicons.ttf", {
+  destDir: "fonts"
+});
+app.import("bower_components/ionicons/fonts/ionicons.woff", {
+  destDir: "fonts"
+});
+
 app.import({
   development: 'bower_components/d3/d3.js',
   production:  'bower_components/ember/d3.min.js'
+});
+
+app.import({
+  development: 'bower_components/cryptojslib/components/sha3.js',
+  production:  'bower_components/cryptojslib/components/sha3-min.js'
 });
 
 app.import("bower_components/bootstrap-less/js/dropdown.js");
