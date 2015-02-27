@@ -28,7 +28,7 @@ module.exports = function(app, db) {
         loadpercent: (os.loadavg()[0]*100/os.cpus().length).toFixed(2),
         totalmem: os.totalmem(),
         freemem: os.freemem(),
-        mempercent: (os.freemem()/os.totalmem()).toFixed(2),
+        mempercent: ((os.freemem()/os.totalmem())*100).toFixed(2),
         cpus: os.cpus()
       }
     })
