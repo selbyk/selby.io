@@ -20,9 +20,7 @@ var _arc2 = d3.svg.arc()
     .startAngle(0 * (Math.PI/180))
     .endAngle(0); //just radians
 
-var _width = 300, _height = 300;
-
-var path, path2, label;
+var _width = 300, _height = 300, label;
 
 function onMouseClick(d) {
   /*if (typeof _mouseClick == "function") {
@@ -75,10 +73,14 @@ export default Ember.Component.extend({
   maxValue: 100,
   label: null,
   svgId: null,
-  getSvgId: function(){
-    if(!this.svgId)
-      this.set('svgId', 'svg-'+this.get('elementId'));
-    return this.svgId;
+  path: null,
+  path2: null,
+  getPath: function(){
+    if(!this.this.get('path')){
+      this.$('svg path.radial-arc').attr("id", 'arc-'+this.get('elementId'));
+      this.path = d3.select('#arc-'+this.get('elementId')).data(this.get('value'));
+    }
+    return this.path;
   },
   labelTween: function(a) {
       return function(t) {
@@ -94,13 +96,13 @@ export default Ember.Component.extend({
     var endAngle=Math.min(360*ratio,360);
     endAngle=endAngle * Math.PI/180;
 
-    path.datum(endAngle);
-    path.transition().duration(_duration)
+    this.path.datum(endAngle);
+    this.path.transition().duration(_duration)
         .attrTween("d", arcTween);
 
     if (ratio > 1) {
-        path2.datum(Math.min(360*(ratio-1),360) * Math.PI/180);
-        path2.transition().delay(_duration).duration(_duration)
+      this.path2.datum(Math.min(360*(ratio-1),360) * Math.PI/180);
+      this.path2.transition().delay(_duration).duration(_duration)
             .attrTween("d", arcTween2);
     }
 
@@ -153,15 +155,17 @@ export default Ember.Component.extend({
 
     _arc.endAngle(_currentArc);
     enter.append("g").attr("class", "radial-arcs");
-    path = d3.select('#arc-'+this.get('elementId')).data(this.get('value'));
-    path.enter().append("path")
+
+    this.path = d3.select('#arc-'+this.get('elementId')).data(this.get('value'));
+
+    this.path.enter().append("path")
         .attr("class","radial-arc")
         .attr("transform", "translate(" + _width/2 + "," + _width/2 + ")")
         .attr("d", _arc);
 
     //Another path in case we exceed 100%
-    path2 = svg.select('#arc2-'+this.get('elementId')).selectAll(".radial-arc2").data(this.get('value'));
-    path2.enter().append("path")
+    this.path2 = svg.select('#arc2-'+this.get('elementId')).selectAll(".radial-arc2").data(this.get('value'));
+    this.path2.enter().append("path")
         .attr("class","radial-arc2")
         .attr("transform", "translate(" + _width/2 + "," + _width/2 + ")")
         .attr("d", _arc2);
@@ -180,7 +184,7 @@ export default Ember.Component.extend({
         .style("font-size",_fontSize+"px")
         .on("click",onMouseClick);
 
-    path.exit().transition().duration(500).attr("x",1000).remove();
+    this.path.exit().transition().duration(500).attr("x",1000).remove();
 
     this.update();
   }.on('didInsertElement')
