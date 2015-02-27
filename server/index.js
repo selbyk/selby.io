@@ -59,12 +59,12 @@ var setupExpress = function(expressApp){
  */
 var setupRouting = function(expressApp){
   // Configure the api
-  var apiRoutes = api = require('sequelize-json-api'); // api mod
-  apiRoutes = api(db.sequelize, config.sequelizeJsonApiConfig);
+  //var apiRoutes = api = require('sequelize-json-api'); // api mod
+  //apiRoutes = api(db.sequelize, config.sequelizeJsonApiConfig);
   //Generate routes for models in config
-  apiRoutes.initialize();
+  //apiRoutes.initialize();
   // Use api routes
-  expressApp.use('/api/v1', apiRoutes);
+  //expressApp.use('/api/v1', apiRoutes);
 
   routes.forEach(function(route) { route(expressApp, db); });
   //expressApp.use('/docs', express.static(__dirname + '/public/docs'));

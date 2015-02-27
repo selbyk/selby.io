@@ -45,15 +45,14 @@
     "ember-data": "^1.0.0-beta.15",
     "ember-export-application-global": "^1.0.2",
     "ember-idx-forms": "^0.5.1",
-    "ember-moment": "1.0.0",
+    "ember-moment": "^1.1.0",
     "emberfire": "^1.3.3",
     "express": "^4.12.0",
-    "glob": "^4.4.0",
+    "glob": "^4.4.1",
     "moment": "^2.9.0",
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
     "sequelize": "^2.0.3",
-    "sequelize-json-api": "git://github.com/learntracker/sequelize-json-api",
     "sqlite3": "^3.0.5"
   }
 }
