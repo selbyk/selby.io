@@ -1,7 +1,8 @@
 <div class="container">
-<div class="page-header">
-<h2>Stats</h2>
-<p>This will eventually be some stats about this server.</p>
-</div>
-{{line-chart}}
+  <div class="page-header">
+    <h2>Stats</h2>
+    <p>This will eventually be some stats about this server.</p>
+  </div>
+  <h3>CPU Usage</h3>
+  {{radial-progress value=controllers.application.stats.loadpercent}}
 </div>
