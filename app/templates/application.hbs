@@ -24,16 +24,23 @@
       {{/link-to}}
     </div>
     <div class="col-xs-3 col-sm-3 text-center">
-      {{#link-to 'todo' class='navigation'}}
-        <h3><span class="mega-octicon octicon-checklist"> </span></h3>
-        <h6>Todo</h6>
+      {{#link-to 'about.projects' class='navigation'}}
+        <h3><span class="mega-octicon octicon-code"> </span></h3>
+        <h6>Projects</h6>
       {{/link-to}}
     </div>
-    <div class="col-xs-3 col-sm-3 text-center">
-      {{#link-to 'about' class='navigation'}}
-        <h3><span class="mega-octicon octicon-info"> </span></h3>
-        <h6>About</h6>
-      {{/link-to}}
+    <div class="dropdown col-xs-3 col-sm-3 text-center">
+      <span class="navigation dropdown-toggle" type="button" id="moreMenu" data-toggle="dropdown">
+        <h3><span class="mega-octicon octicon-chevron-down"> </span></h3>
+        <h6>More</h6>
+      </span>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="moreMenu">
+        <li role="presentation">{{#link-to 'about.tools' class='navigation' tabindex="-1" role="menuitem"}}<span class="mega-octicon octicon-database"> </span> Tools{{/link-to}}</li>
+        <li role="presentation">{{#link-to 'stats' class='navigation' tabindex="-1" role="menuitem"}}<span class="mega-octicon octicon-dashboard"> </span> Server Stats{{/link-to}}</li>
+        <li role="presentation">{{#link-to 'todo' class='navigation' tabindex="-1" role="menuitem"}}<span class="mega-octicon octicon-checklist"> </span> Todo (WIP){{/link-to}}</li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation">{{#link-to 'about' class='navigation' tabindex="-1" role="menuitem"}}<span class="mega-octicon octicon-info"> </span> About{{/link-to}}</li>
+      </ul>
     </div>
   </div>
   <div class="row clearfix"></div>
