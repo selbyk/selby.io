@@ -55,8 +55,8 @@ app.import({
 });
 
 app.import({
-  development: 'bower_components/cryptojslib/components/sha3.js',
-  production:  'bower_components/cryptojslib/components/sha3-min.js'
+  development: 'bower_components/cryptojslib/rollups/sha3.js',
+  production:  'bower_components/cryptojslib/rollups/sha3.js'
 });
 
 app.import("bower_components/bootstrap-less/js/dropdown.js");
