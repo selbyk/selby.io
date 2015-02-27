@@ -1,1 +1,18 @@
-{{value}}
+<svg class="radial-svg" width="300" height="300">
+  <g transform="translate(0,0)">
+    <g class="radial-component" cursor="pointer">
+      <rect class="radial-background" width="300" height="300">
+      </rect>
+      <path transform="translate(150,150)" d="M0,150A150,150 0 1,1 0,-150A150,150 0 1,1 0,150M0,127.5A127.5,127.5 0 1,0 0,-127.5A127.5,127.5 0 1,0 0,127.5Z"></path>
+      <text class="radial-label" transform="translate(150,360)">{{label}}</text>
+    </g>
+    <g class="radial-arcs">
+      <path id="fuck" class="radial-arc" transform="translate(150,150)" d="M9.184850993605149e-15,-150A150,150 0 0,1 61.89890047805104,-136.6328149443183L52.614065406343386,-116.13789270267057A127.5,127.5 0 0,0 7.807123344564377e-15,-127.5Z"></path>
+      <path id="fuck2" class="radial-arc2" transform="translate(150,150)" d="M7.807123344564377e-15,-127.5A127.5,127.5 0 0,1 7.807123344564377e-15,-127.5L6.429395695523604e-15,-105A105,105 0 0,0 6.429395695523604e-15,-105Z"></path>
+    </g>
+    <g class="radial-labels">
+      <text class="radial-label" y="170" x="150" cursor="pointer" width="300" style="font-size: 60px;">{{value}}%</text>
+    </g>
+  </g>
+</svg>
+{{label}}

@@ -35,4 +35,9 @@ app.import("bower_components/octicons/octicons/octicons.woff", {
   destDir: "fonts"
 });
 
+app.import({
+  development: 'bower_components/d3/d3.js',
+  production:  'bower_components/ember/d3.min.js'
+});
+
 module.exports = app.toTree();
