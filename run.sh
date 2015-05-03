@@ -5,5 +5,5 @@ cd $DIR
 touch $LOGFILE
 fuser -k 4200/tcp
 fuser -k 35729/tcp
-ember s --environment=production > $LOGFILE 2>&1 &
+ember s --environment=production --liveReload=false > $LOGFILE 2>&1 &
 echo "Reporting to $LOGFILE"
