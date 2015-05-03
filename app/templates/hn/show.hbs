@@ -1,0 +1,17 @@
+{{#each item in model}}
+  {{#if item.title}}
+    {{#if item.isUrl}}
+      <h4> <a {{bind-attr href=item.url}}>{{item.title}}</a>
+        <small> ({{item.domain}}) </small>
+      </h4>
+    {{else}}
+      <h4> <a {{bind-attr href=item.commentsUrl}}>{{item.title}}</a></h4>
+    {{/if}}
+    <p class="text-right">
+      {{#unless item.isJob}}
+        <span>{{item.score}} points</span> by <a {{bind-attr href=item.authorUrl}}>{{item.by}}</a> {{/unless}}{{item.publishedDate}}
+      {{#unless item.isJob}} | <a {{bind-attr href=item.commentsUrl}}>comments</a>{{/unless}}
+    </p>
+    <hr>
+  {{/if}}
+{{/each}}

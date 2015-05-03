@@ -15,8 +15,10 @@ Router.reopen({
 });
 
 Router.map(function() {
-  this.route("index", {
+  this.resource("index", {
     path: "/"
+  }, function() { // -> FooBarRoute
+    // /this.route('baz');                  // -> FooBarBazRoute
   });
 
   this.route("map");
@@ -25,7 +27,9 @@ Router.map(function() {
 
 
 
-  this.resource("posts", { path: "/blog" }, function() {
+  this.resource("posts", {
+    path: "/blog"
+  }, function() {
     this.route("new");
 
     this.route("edit", {
@@ -37,7 +41,9 @@ Router.map(function() {
     });
   });
 
-  this.resource("files", { path: "/files" }, function() {
+  this.resource("files", {
+    path: "/files"
+  }, function() {
     this.route("new");
 
     //this.route("edit", {
@@ -47,6 +53,23 @@ Router.map(function() {
     //this.route("view", {
     //  path: "/:post_id"
     //});
+  });
+
+  this.resource("hn", {
+    path: "/hn"
+  }, function() {
+    this.route("new", {
+      path: "/new"
+    });
+    this.route("ask", {
+      path: "/ask"
+    });
+    this.route("show", {
+      path: "/show"
+    });
+    this.route("search", {
+      path: "/search/:q"
+    });
   });
 
   this.resource("links", {
