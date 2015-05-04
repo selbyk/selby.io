@@ -1,4 +1,10 @@
-{{#each item in model}}
+Searching for "{{query}}"
+
+<div class='text-center'>
+  {{page-numbers content=this}}
+</div>
+
+{{#each item in this}}
   {{#if item.title}}
     {{#if item.isUrl}}
       <h4> <a {{bind-attr href=item.url}}>{{item.title}}</a>
@@ -15,3 +21,7 @@
     <hr>
   {{/if}}
 {{/each}}
+
+<div class='text-center'>
+  {{page-numbers content=this}}
+</div>

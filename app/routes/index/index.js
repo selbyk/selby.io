@@ -1,13 +1,22 @@
 import Ember from 'ember';
 import ResetScrollMixin from "selby.io/mixins/reset-scroll";
+import RouteMixin from 'ember-cli-pagination/remote/route-mixin';
 
-export default Ember.Route.extend(ResetScrollMixin, {
+export default Ember.Route.extend(ResetScrollMixin, RouteMixin, {
+  queryParams: {
+    page: {
+      refreshModel: true
+    }
+  },
+  // optional. default is 10
+  perPage: 30,
   renderTemplate: function() {
     this.render('hn.show');
   },
-  model: function() {
-    return this.store.find('hn-item', {
-      special: 'top'
-    });
+  model: function(params) {
+    // todo is your model name
+    // returns a PagedRemoteArray
+    params.special = 'top';
+    return this.findPaged('hn-item', params);
   }
 });

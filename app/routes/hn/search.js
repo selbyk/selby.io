@@ -1,19 +1,27 @@
 import Ember from 'ember';
 import ResetScrollMixin from "selby.io/mixins/reset-scroll";
+import RouteMixin from 'ember-cli-pagination/remote/route-mixin';
 
-export default Ember.Route.extend(ResetScrollMixin, {
+export default Ember.Route.extend(ResetScrollMixin, RouteMixin, {
   queryParams: {
+    page: {
+      refreshModel: true
+    },
     q: {
       refreshModel: true
     }
   },
+  // optional. default is 10
+  perPage: 30,
+  query: null,
+  setupController: function(controller, model) {
+    controller.set('query', this.get('query'));
+    controller.set('model', model);
+  },
   model: function(params) {
-    // This gets called upon entering 'articles' route
-    // for the first time, and we opt into refiring it upon
-    // query param changes by setting `refreshModel:true` above.
-
-    // params has format of { category: "someValueOrJustNull" },
-    // which we can just forward to the server.
-    return this.store.find('hn-item', params);
+    this.set('query', params.q);
+    // todo is your model name
+    // returns a PagedRemoteArray
+    return this.findPaged('hn-item', params);
   }
 });
