@@ -10,9 +10,6 @@ export default Ember.Route.extend(ResetScrollMixin, RouteMixin, {
   },
   // optional. default is 10
   perPage: 30,
-  renderTemplate: function() {
-    this.render('hn.show');
-  },
   model: function(params) {
     // todo is your model name
     // returns a PagedRemoteArray

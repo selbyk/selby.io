@@ -6,24 +6,16 @@
       <div class="col-xs-12 col-sm-6 col-md-8">
         <ul class="nav nav-pills">
           {{#link-to 'hn.index' role="presentation" tagName="li" href=false}}
-            <a href= {{view.href}}>
-          Top
-        </a>
+            {{#link-to 'index'}}Top{{/link-to}}
           {{/link-to}}
           {{#link-to 'hn.new' tagName="li" href=false}}
-            <a href= {{view.href}}>
-          New
-        </a>
+            {{#link-to 'hn.new'}}New{{/link-to}}
           {{/link-to}}
           {{#link-to 'hn.ask' tagName="li" href=false}}
-            <a href= {{view.href}}>
-          Ask HN
-        </a>
+            {{#link-to 'hn.ask'}}Ask HN{{/link-to}}
           {{/link-to}}
           {{#link-to 'hn.show' tagName="li" href=false}}
-            <a href= {{view.href}}>
-          Show HN
-        </a>
+            {{#link-to 'hn.show'}}Show HN{{/link-to}}
           {{/link-to}}
         </ul>
       </div>
