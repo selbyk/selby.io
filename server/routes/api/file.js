@@ -185,7 +185,7 @@ module.exports = function(app, db) {
       file.updateAttributes({
         etag: params.etag,
         url: params.url
-      }).success(function() {});
+      }).then(function() {});
     })
     res.send('ok!');
     //req.busboy.on('field', function(key, value, keyTruncated, valueTruncated) {
