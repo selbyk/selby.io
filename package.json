@@ -55,6 +55,6 @@
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
     "sequelize": "^2.0.3",
-    "sqlite3": "^3.0.5"
+    "sqlite3": "^3.0.6"
   }
 }

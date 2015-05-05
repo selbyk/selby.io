@@ -1,31 +1,50 @@
-<div class="container top">
+<div id="header" class="container top">
   <h1 class="name-tag hidden">
     <span class="icon ion-man"> Selby Kendrick</span>
   </h1>
+  <div id="time" class="row col-xs-12 text-right">
+    <small>{{currentTime}}</small>
+  </div>
   <div class="col-xs-4">
     <button class="logo-backdrop" {{action 'toTop'}}>
-        <span class="logo-text logo-sm visible-xs">selby.io</span>
-        <span class="logo-text hidden-xs hidden-lg">selby.io</span>
-        <span class="logo-text logo-lg visible-lg">selby.io</span>
-        <h6>Top <span class="icon ion-chevron-up"> </span></h6>
+      <span class="logo-text logo-sm visible-xs">selby.io</span>
+      <span class="logo-text hidden-xs hidden-lg">selby.io</span>
+      <span class="logo-text logo-lg visible-lg">selby.io</span>
+      <h6>Top
+        <span class="icon ion-chevron-up"> </span>
+      </h6>
     </button>
   </div>
-  <div class="row pull-right">
+  <div id="top-nav" class="row pull-right">
     <div class="col-xs-3 col-sm-3 text-center">
-      {{#link-to 'index' class='navigation'}}
-        <h3><span class="mega-octicon octicon-terminal"> </span></h3>
+      {{#link-to 'index' class='navigation' }}
+        <h3>
+          <span class="mega-octicon octicon-globe"></span>
+        </h3>
         <h6>News</h6>
       {{/link-to}}
     </div>
     <div class="col-xs-3 col-sm-3 text-center">
-      {{#link-to 'posts' class='navigation'}}
-        <h3><span class="mega-octicon octicon-comment"> </span></h3>
+      {{#link-to 'posts' class='navigation' }}
+        <h3>
+          <span class="mega-octicon octicon-terminal"> </span>
+        </h3>
         <h6>Blog</h6>
       {{/link-to}}
     </div>
     <div class="col-xs-3 col-sm-3 text-center">
-      {{#link-to 'about.projects' class='navigation'}}
-        <h3><span class="mega-octicon octicon-code"> </span></h3>
+      {{#link-to 'about' class='navigation' }}
+        <h3>
+          <span class="mega-octicon octicon-info"> </span>
+        </h3>
+        <h6>About</h6>
+      {{/link-to}}
+    </div>
+    <!--<div class="col-xs-3 col-sm-3 text-center">
+      {{#link-to 'about.projects' class='navigation' }}
+        <h3>
+          <span class="mega-octicon octicon-code"> </span>
+        </h3>
         <h6>Projects</h6>
       {{/link-to}}
     </div>
@@ -41,11 +60,7 @@
         <li role="presentation" class="divider"></li>
         <li role="presentation">{{#link-to 'about' class='navigation' tabindex="-1" role="menuitem"}}<span class="mega-octicon octicon-info"> </span> About{{/link-to}}</li>
       </ul>
-    </div>
-  </div>
-  <div class="row clearfix"></div>
-  <div class="row col-xs-12">
-    <small>{{currentTime}}</small>
+    </div>-->
   </div>
 </div>
 
@@ -61,12 +76,14 @@
     <h3>&copy; 2014-{{moment date 'YYYY'}} Selby Kendrick</h3>
   </div>
   <div class="bottom">
-    <h4>You can find the source to this page and some of my other projects on <a href="https://github.com/selbyk"><span class="icon ion-social-github"></span> GitHub</a>.</h4>
+    <h4>You can find the source to this page and some of my other projects on
+      <a href="https://github.com/selbyk">
+        <span class="icon ion-social-github"></span> GitHub</a>.</h4>
     <br>
     <h5>
       CPU: {{stats.loadpercent}}% - Mem Used: {{stats.mempercent}}% - Uptime: {{stats.uptime}}
       <small>
-        {{#link-to 'stats'}} More...{{/link-to}}
+        {{#link-to 'about.server'}} More...{{/link-to}}
       </small>
     </h5>
     <br>

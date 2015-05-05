@@ -82,21 +82,16 @@ Router.map(function() {
     });
   });
 
-  this.route("stats", {
-    path: "/stats"
-  });
+
 
   this.route("todo", {
     path: "/todo"
   });
 
-  this.route("about", {
-    path: "/about"
-  });
-
   this.resource("about", function() {
     this.route("projects");
     this.route("tools");
+    this.route("server");
   });
 });
 

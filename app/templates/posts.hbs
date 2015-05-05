@@ -1,15 +1,17 @@
 <div class="container">
   <div class="page-header">
     <h2>
-      <span class="icon ion-chatbubble"> </span> Blog
+      <span class="mega-octicon octicon-terminal"> </span> Blog
+      <br>
       <small>
-        Some things I say
+        Just a place to share
       </small>
-
     </h2>
     <h4 class="text-right">
       {{#if session.isAuthenticated}}
-        {{#link-to 'posts.new'}}<span class="icon ion-plus"> New</span>{{/link-to}}
+        {{#link-to 'posts.new'}}
+          <span class="icon ion-plus"> New</span>
+        {{/link-to}}
       {{/if}}
     </h4>
   </div>

@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      <h4><span class="icon ion-navicon"> </span> Posts</h4>
+      <h4>
+        <span class="icon ion-navicon"> </span> Posts</h4>
     </div>
     <div class="col-md-6">
     </div>
@@ -11,15 +12,15 @@
       <h4>
         {{#link-to 'posts.view' post}}{{post.title}}{{/link-to}}
         <small>
-        / {{ago post.created_at}}
-        <span class="label label-danger">Private</span>
+          / {{ago post.created_at}}
+          <span class="label label-danger">Private</span>
         </small>
       </h4>
     {{else}}
       <h4>
         {{#link-to 'posts.view' post}}{{post.title}}{{/link-to}}
         <small>
-        / {{ago post.created_at}}
+          / {{ago post.created_at}}
         </small>
       </h4>
     {{/if}}
