@@ -28,9 +28,14 @@
         <button {{action "transitionToDir" parent.id}}>
           <a>
             <h5>
-              <span class="octicon octicon-chevron-left"></span> Back to {{parent.dirLabel}}</h5>
+              <span class="octicon octicon-chevron-left"></span> Back to {{parent.dirLabel}}
+            </h5>
           </a>
         </button>
+      {{else}}
+        <h5>
+          <span class="octicon octicon-location"></span> Click a division to navigate
+        </h5>
       {{/if}}
       {{dir-piechart dir=dir}}
     </div>

@@ -60,6 +60,8 @@ export default Ember.Component.extend({
         "location": "bottom-left"
       },
       "size": {
+        //"canvasHeight": 420,
+        //"canvasWidth": 420,
         "pieInnerRadius": "84%",
         "pieOuterRadius": "58%"
       },
