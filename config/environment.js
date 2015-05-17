@@ -16,6 +16,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    //contentSecurityPolicyHeader: 'Content-Security-Policy',
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline' localhost:4200 localhost:35729 graph.facebook.com www.google-analytics.com connect.facebook.net load.sumome.com sumome-140a.kxcdn.com api.facebook.com urls.api.twitter.com",
+      'font-src': "'self'",
+      'img-src': "'self' 'unsafe-inline' data: s3-us-west-2.amazonaws.com www.google-analytics.com i.imgur.com sumome-140a.kxcdn.com sumome.com",
+      'connect-src': "'self' localhost:4200 selby.io sumome.com load.sumome.com",
+      'style-src': "'self' 'unsafe-inline' sumome-140a.kxcdn.com fonts.googleapis.com",
+      'frame-src': "'self' static.ak.facebook.com s-static.ak.facebook.com",
+      //'report-uri': "/api/csp"
     }
   };
 
