@@ -1,24 +1,11 @@
 import Ember from 'ember';
 
-export default Ember.ObjectController.extend({
-  setupController: function(controller, model) {
-    controller.set('model', {});
-  },
+export default Ember.Controller.extend({
   actions: {
     submit: function(){
-      //alert(this.get("title")+' '+JSON.stringify(this.get("content"))+' '+JSON.stringify(this.get("model")));
-      Ember.$.ajax('/api/v1/posts', {
-        type: 'POST',
-        dataType: 'json',
-        data: { 'post': this.get("model") },
-        context: this,
-        success: function(data) {
-          this.transitionTo('posts');
-        },
-        error: function() {
-          alert('Failed to save post!');
-        }
-      });
+      var _this = this;
+      // Set the data to post route action
+      this.send('savePost', _this.get("post"));
     }
   }
 });
