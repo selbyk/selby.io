@@ -5,7 +5,8 @@ import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 export default Ember.Route.extend(ApplicationRouteMixin, ResetScrollMixin, {
   actions: {
     didTransition: function() {
-      if (this.controllerFor('application').get('currentPath').search('hn') !== -1) {
+      var path = this.controllerFor('application').get('currentPath') || null;
+      if (path && path.search('hn') !== -1) {
         this.controllerFor('application').set('isNews', true);
       } else {
         this.controllerFor('application').set('isNews', false);
