@@ -89,6 +89,11 @@ Router.map(function() {
   });
 
   this.resource("about", function() {
+    this.resource("about.index", {
+      path: "/"
+    }, function() {
+      this.route("resume");
+    });
     this.route("projects");
     this.route("tools");
     this.route("server");

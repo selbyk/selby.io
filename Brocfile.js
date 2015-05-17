@@ -70,6 +70,10 @@ app.import({
 
 app.import("bower_components/bootstrap-less/js/dropdown.js");
 
+app.import("bower_components/pdfjs-dist/build/pdf.combined.js");
+
+
+
 var tree = app.toTree();
 
 if (isProduction) {

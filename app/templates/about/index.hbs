@@ -1,7 +1,7 @@
 <div class="container">
   <div class="page-header">
     <h2>
-      <span class="mega-octicon octicon-person"></span> Bio
+      <span class="mega-octicon octicon-person"></span> Selby
       <br>
       <small>A little about me</small>
     </h2>
@@ -9,44 +9,39 @@
   <div class="row-fluid">
     <div class="hidden-xs col-md-2">
     </div>
-    <div class="col-xs-12 col-md-8">
-      <div class="col-xs-5 col-md-4">
+    <div class="col-xs-12 col-md-12">
+      <div class="col-xs-5 col-md-3">
         <img class="img-responsive" src="/selby.jpg">
-        <h3>
-          <a href="/resume-safe.pdf" target="_blank">
-            <span class="icon ion-document-text"> </span> Resume</a>
-        </h3>
-        <h3>
+        <ul class="nav nav-pills nav-stacked">
+          {{#link-li}}
+            {{#link-to 'about.index'}}<span class="octicon octicon-person"></span> Bio{{/link-to}}
+          {{/link-li}}
+          {{#link-li}}
+            {{#link-to 'about.index.resume'}}<span class="icon ion-document-text"> </span> Resume{{/link-to}}
+          {{/link-li}}
+        </ul>
+        <h5>
           <a href="https://www.linkedin.com/pub/selby-kendrick/50/289/650" target="_blank">
             <span class="icon ion-social-linkedin"> </span> LinkedIn</a>
-        </h3>
-        <h3>
+        </h5>
+        <h5>
           <a href="https://github.com/selbyk" target="_blank">
             <span class="icon ion-social-github"> </span> Github</a>
-        </h3>
-        <h3>
+        </h5>
+        <h5>
           <a href="http://amzn.com/w/1E0CW6S39FVMS" target="_blank">
             <span class="icon ion-heart"> </span> Wishlist</a>
-        </h3>
-        <h3>
+        </h5>
+        <h5>
           <s>
             <a href="https://osrc.dfm.io/selbyk/" target="_blank">
               <span class="icon ion-code-working"> </span> OSRC</a>
           </s>
-        </h3>
+        </h5>
       </div>
-      <p class="lead">I am a full time hacker who has a passion for finding creative and effective solutions to practical problems by pushing bits around until they do my bidding.</p>
-      <p>This is a playground for ideas that can double as a showcase of my work. I hope you find something interesting, and make sure you check out our baby,
-        <a href="https://sparehanger.com" target="_blank">sparehanger</a> &#8212; a new way to find, organize, and share your style.</p>
-
-      <p>I love and am intrigued by algorithms, machine learning, networking, big data analytics, trend prediction, and everything the future holds for us. I am a fitness buff, a bitcoin and namecoin nerd, and have an interest in genetic research. Beyond
-        that, <a href="http://www.last.fm/user/n344853835">music</a> has always been a huge part of my life.</p>
-
-      <p>
-        <s>You can also check out my <a href="http://osrc.dfm.io/selbyk">Open Source Report Card</a>, but it's really just for fun.</s>
-      </p>
-
-      <p>May we have the pleasure of working together to build something great. =)</p>
+      <div class="col-xs-12 col-md-9">
+        {{outlet}}
+      </div>
     </div>
   </div>
   <div class="col-md-2">
