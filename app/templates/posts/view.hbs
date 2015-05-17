@@ -1,13 +1,13 @@
 <div class="container">
   <h3>
-    <span class="icon ion-document-text"> </span> {{title}}</h3>
+    <span class="icon ion-document-text"> </span> {{post.title}}</h3>
   <h4 class="text-right">
     {{#if session.isAuthenticated}}
-      {{#link-to 'posts.edit' model}}
+      {{#link-to 'posts.edit' post}}
         <span class="icon ion-compose"> Edit</span>
       {{/link-to}}
     {{/if}}
   </h4>
-  <h5>Created {{ago created_at}} - Updated {{ago updated_at}}</h5>
-  {{format-markdown model.content}}
+  <h5>Created {{ago post.created_at}} - Updated {{ago post.updated_at}}</h5>
+  {{format-markdown post.content}}
 </div>

@@ -25,15 +25,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, ResetScrollMixin, {
         private: postData.private
       });
       // Save the post
-      post
-        .save()
-        .then(function() {
-          alert('on snap');
-          _this.transitionTo('posts');
-        })
-        .catch(function(err) {
-          alert('Failed to save post!' + err.message || err);
-        });
+      this.send('savePost', post);
     }
   }
 });

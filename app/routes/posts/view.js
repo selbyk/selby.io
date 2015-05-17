@@ -7,6 +7,6 @@ export default Ember.Route.extend(ResetScrollMixin, {
     return this.store.find('post', params.post_id);
   },
   setupController: function (controller, post) {
-    controller.set('model', post);
+    controller.set('post', post);
   },
 });
