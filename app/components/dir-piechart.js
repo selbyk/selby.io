@@ -38,6 +38,8 @@ export default Ember.Component.extend({
       "color": _this.getColor()
     });
 
+    var size = Math.min(500, Ember.$('#'+_this.get('elementId')).parent().width());
+
     var pie = new d3pie(this.get('elementId'), {
       "header": {
         "title": {
@@ -60,8 +62,8 @@ export default Ember.Component.extend({
         "location": "bottom-left"
       },
       "size": {
-        //"canvasHeight": 420,
-        //"canvasWidth": 420,
+        "canvasHeight": size,
+        "canvasWidth": size,
         "pieInnerRadius": "84%",
         "pieOuterRadius": "58%"
       },

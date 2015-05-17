@@ -9,17 +9,21 @@ export default Ember.Component.extend({
       // you can now use *pdf* here
       pdf.getPage(1).then(function(page) {
         // you can now use *page* here
-        var scale = 1.5;
-        var viewport = page.getViewport(scale);
+        var desiredWidth = Ember.$('#'+_this.get('elementId')).parent().width();
+var viewport = page.getViewport(1);
+var scale = desiredWidth / viewport.width;
+var scaledViewport = page.getViewport(scale);
+        //var scale = 1.5;
+        //var viewport = page.getViewport(scale);
 
         var canvas = document.getElementById(_this.get('elementId'));
         var context = canvas.getContext('2d');
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
+        canvas.height = scaledViewport.height;
+        canvas.width = scaledViewport.width;
 
         var renderContext = {
           canvasContext: context,
-          viewport: viewport
+          viewport: scaledViewport
         };
         page.render(renderContext);
       });
