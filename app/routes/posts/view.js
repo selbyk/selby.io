@@ -8,5 +8,5 @@ export default Ember.Route.extend(ResetScrollMixin, {
   },
   setupController: function (controller, post) {
     controller.set('post', post);
-  },
+  }
 });

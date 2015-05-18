@@ -14,18 +14,5 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, ResetScrollMixin, {
       content: '',
       private: true
     };
-  },
-  actions: {
-    savePost: function(postData) {
-      var _this = this;
-      // Create the post
-      var post = this.store.createRecord('post', {
-        title: postData.title,
-        content: postData.content,
-        private: postData.private
-      });
-      // Save the post
-      this.send('savePost', post);
-    }
   }
 });
