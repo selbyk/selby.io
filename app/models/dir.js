@@ -26,9 +26,9 @@ var dir = DS.Model.extend({
   }.property('children', 'size'),
   dirLabel: function() {
     if (this.get('path') === '/') {
-      return "root (" + this.get('sizeString') + ")";
+      return "root";
     } else {
-      return this.get('path').match(/([^\/]*)\/*$/)[1] + " (" + this.get('sizeString') + ")";
+      return this.get('path').match(/([^\/]*)\/*$/)[1];
     }
 
   }.property('path', 'size'),

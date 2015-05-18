@@ -11,6 +11,7 @@
 @import "app/styles/todo.less";
 @import "app/styles/bootstrap-revise.less";
 @import "app/styles/radial.less";
+@import "app/styles/piechart.less";
 button:focus {
   outline: 0;
 }
@@ -24,13 +25,36 @@ html {
 html,
 body {
   position: relative;
-  font-family: "Arvo";
-  font-weight: 200;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-weight: 400;
   width: 100%;
   //background: url("/img/golden_spiral.svg") left bottom fixed no-repeat;
   //background-size: contain;
   background-size: 100% auto;
 }
+
+h1,
+h2,
+h3,
+{
+  font-family: 'Lora', Georgia, Times, serif !important;
+  font-weight: 700;
+}
+
+h4,
+h5,
+h6,
+{
+  font-family: 'Source Sans Pro', Georgia, Times, serif !important;
+  font-weight: 600;
+}
+
+p {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 29px;
+}
+
 /* unvisited link */
 a:link .logo-backdrop {
   color: #000;
@@ -48,7 +72,7 @@ a:active .logo-backdrop {
   color: #000;
 }
 .logo {
-  
+
 }
 .container.jumbotron {
   background: @white-trans;
@@ -327,12 +351,7 @@ a.navigation {
   margin: 80px 0;
   /* Space out the Bootstrap <hr> more */
 }
-/* Thin out the marketing headings */
-.featurette-heading {
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -1px;
-}
+
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 @media (min-width: 768px) {
@@ -357,9 +376,6 @@ a.navigation {
     margin-bottom: 20px;
     font-size: 21px;
     line-height: 1.4;
-  }
-  .featurette-heading {
-    font-size: 150%;
   }
 }
 span.fa-angle-double-left {
