@@ -1,28 +1,32 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <h4>
-        <span class="icon ion-navicon"> </span> Posts</h4>
-    </div>
-    <div class="col-md-6">
+    <div class="col-xs-12 col-md-9">
+      {{#each post in arrangedContent}}
+        {{#if post.private}}
+        {{#link-to 'posts.view' post}}
+          <h2>
+            {{post.title}}
+            <small>
+              / {{ago post.created_at}}
+              <span class="label label-danger">Private</span>
+            </small>
+          </h2>
+          <p class="text-muted">
+            {{format-markdown post.short}}
+          </p>
+          {{/link-to}}
+        {{else}}
+          <h2>
+            {{#link-to 'posts.view' post}}{{post.title}}{{/link-to}}
+            <small>
+              / {{ago post.created_at}}
+            </small>
+          </h2>
+          <p class="text-muted">
+            {{post.short}}
+          </p>
+        {{/if}}
+      {{/each}}
     </div>
   </div>
-  {{#each post in arrangedContent}}
-    {{#if post.private}}
-      <h4>
-        {{#link-to 'posts.view' post}}{{post.title}}{{/link-to}}
-        <small>
-          / {{ago post.created_at}}
-          <span class="label label-danger">Private</span>
-        </small>
-      </h4>
-    {{else}}
-      <h4>
-        {{#link-to 'posts.view' post}}{{post.title}}{{/link-to}}
-        <small>
-          / {{ago post.created_at}}
-        </small>
-      </h4>
-    {{/if}}
-  {{/each}}
 </div>
