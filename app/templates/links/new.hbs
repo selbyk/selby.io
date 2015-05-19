@@ -5,7 +5,7 @@
         {{em-input label="URL" property="url"}}
         {{em-text label="Description" property="description" rows=5}}
         <div class="form-actions">
-            <input {{bind-attr disabled=isntValid}} type="submit" class="btn" value="Create Link">
+            <input disabled={{isntValid}} type="submit" class="btn" value="Create Link">
         </div>
     {{/em-form}}
 </div>

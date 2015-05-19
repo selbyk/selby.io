@@ -8,7 +8,7 @@
         {{em-checkbox label="Private?" property="private"}}
         {{em-text label="Content" property="content" rows=5 placeholder="What's ur muse?..."}}
         <div class="form-actions">
-          <input {{bind-attr disabled=isntValid}} type="submit" class="btn" value="Post">
+          <input disabled={{isntValid}} type="submit" class="btn" value="Post">
         </div>
       {{/em-form}}
     </div>
