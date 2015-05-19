@@ -4,7 +4,7 @@
 
 {{#each item in this}}
   {{#if item.title}}
-    {{#if item.isUrl}}
+    {{#if item.domain}}
       <h4> <a {{bind-attr href=item.url}} target="_blank">{{item.title}}</a>
         <small> ({{item.domain}}) </small>
       </h4>
