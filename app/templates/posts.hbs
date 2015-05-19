@@ -1,20 +1,20 @@
 <div class="container">
   <div class="page-header">
     <h2>
-      <span class="mega-octicon octicon-terminal"> </span> Blog
-      <br>
-      <small>
-        Just a place to share
+      {{#if currentTitle}}
+        {{#link-to 'posts.index'}}<span class="mega-octicon octicon-terminal"> </span>
+        Blog{{/link-to}} > {{currentTitle}}
+      {{else}}
+        <span class="mega-octicon octicon-terminal"> </span> Blog
+      {{/if}}
+      <small class="pull-right">
+        {{#if session.isAuthenticated}}
+          {{#link-to 'posts.new'}}
+            <span class="icon ion-plus"> New</span>
+          {{/link-to}}
+        {{/if}}
       </small>
     </h2>
-    <h4 class="text-right">
-      {{#if session.isAuthenticated}}
-        {{#link-to 'posts.new'}}
-          <span class="icon ion-plus"> New</span>
-        {{/link-to}}
-      {{/if}}
-    </h4>
   </div>
+  {{outlet}}
 </div>
-
-{{outlet}}

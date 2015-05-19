@@ -1,32 +1,30 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-9">
-      {{#each post in arrangedContent}}
-        {{#if post.private}}
-        {{#link-to 'posts.view' post}}
-          <h2>
-            {{post.title}}
-            <small>
-              / {{ago post.created_at}}
-              <span class="label label-danger">Private</span>
-            </small>
-          </h2>
-          <p class="text-muted">
-            {{post.short}}
-          </p>
-          {{/link-to}}
-        {{else}}
-          <h2>
-            {{#link-to 'posts.view' post}}{{post.title}}{{/link-to}}
-            <small>
-              / {{ago post.created_at}}
-            </small>
-          </h2>
-          <p class="text-muted">
-            {{post.short}}
-          </p>
-        {{/if}}
-      {{/each}}
-    </div>
+<div class="row">
+  <div class="col-xs-12 col-md-9">
+    {{#each post in arrangedContent}}
+      {{#if post.private}}
+      {{#link-to 'posts.view' post}}
+        <h3>
+          {{post.title}}
+          <small>
+            / {{ago post.created_at}}
+            <span class="label label-danger">Private</span>
+          </small>
+        </h3>
+        <p class="text-muted">
+          {{post.short}}
+        </p>
+        {{/link-to}}
+      {{else}}
+        <h3>
+          {{#link-to 'posts.view' post}}{{post.title}}{{/link-to}}
+          <small>
+            / {{ago post.created_at}}
+          </small>
+        </h3>
+        <p class="text-muted">
+          {{post.short}}
+        </p>
+      {{/if}}
+    {{/each}}
   </div>
 </div>

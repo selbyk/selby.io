@@ -1,31 +1,22 @@
-<div class="container">
-  <div class="row">
+<div class="row">
     <div class="col-xs-12 col-md-8">
-      <div class="row">
-        <div class="col-xs-12">
-          <h3>
-            <span class="icon ion-document-text"> </span> {{post.title}}
-            <small>created {{ago post.created_at}}, updated {{ago post.updated_at}}</small>
-          </h3>
-          <h4>
-            {{#if session.isAuthenticated}}
-              {{#link-to 'posts.edit' post}}
-                <span class="icon ion-compose"> Edit</span>
-              {{/link-to}}
-            {{/if}}
-          </h4>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          {{format-markdown post.content}}
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          {{disqus-comments identifier=post.id title=post.title}}
-        </div>
-      </div>
+      <h5 class="text-right">
+        posted {{ago post.created_at}}, updated {{ago post.updated_at}}
+          {{#if session.isAuthenticated}}
+          {{#link-to 'posts.edit' post}}
+            <span class="icon ion-compose"> Edit</span>
+          {{/link-to}}
+        {{/if}}
+      </h5>
     </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    {{format-markdown post.content}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    {{disqus-comments identifier=post.id title=post.title}}
   </div>
 </div>

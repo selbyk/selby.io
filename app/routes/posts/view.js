@@ -8,5 +8,6 @@ export default Ember.Route.extend(ResetScrollMixin, {
   },
   setupController: function (controller, post) {
     controller.set('post', post);
+    this.send('setCurrentTitle', post.get('title'));
   }
 });
