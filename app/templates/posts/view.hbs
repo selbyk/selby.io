@@ -21,6 +21,11 @@
           {{format-markdown post.content}}
         </div>
       </div>
+      <div class="row">
+        <div class="col-xs-12">
+          {{disqus-comments identifier=post.id title=post.title}}
+        </div>
+      </div>
     </div>
   </div>
 </div>

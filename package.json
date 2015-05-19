@@ -44,6 +44,7 @@
     "ember-cli-simple-auth-oauth2": "^0.7.3",
     "ember-cli-uploader": "0.3.4",
     "ember-data": "^1.0.0-beta.15",
+    "ember-disqus": "^0.1.1",
     "ember-export-application-global": "^1.0.2",
     "ember-idx-forms": "^0.5.1",
     "ember-moment": "^1.1.0",
