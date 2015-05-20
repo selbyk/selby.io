@@ -3,14 +3,24 @@
     <div class="col-md-6">
       <h4>
         <span class="icon ion-compose"> </span> Ok, let's do this.</h4>
-      {{#em-form model=post submit_button=false}}
-        {{em-input label="Title" property="title"}}
-        {{em-checkbox label="Private?" property="private"}}
-        {{em-text label="Content" property="content" rows=5}}
-        <div class="form-actions">
-          <input disabled={{isntValid}} type="submit" class="btn" value="Post">
+      <form>
+        <div class="form-group">
+          <label>Title</label>
+          {{input label="Title" value=post.title class="form-control"}}
         </div>
-      {{/em-form}}
+        <div class="form-group">
+          <label>Content</label>
+          {{textarea label="Content" value=post.content rows=5 class="form-control"}}
+        </div>
+        <div class="checkbox">
+          <label>
+             {{input type="checkbox" checked=post.private}} Private?
+          </label>
+        </div>
+        <div class="form-actions">
+          <input disabled= {{isntValid}} type="submit" class="btn btn-default" value="Post">
+        </div>
+      </form>
     </div>
     <div class="col-md-6">
       <h4>

@@ -22,7 +22,7 @@ export default Ember.Route.extend(ResetScrollMixin, {
           }
         })
         .catch(function(err) {
-          alert('Failed to save post!' + err.message || err);
+          console.log('Failed to save post!' + err.message || err);
         });
     }
   }

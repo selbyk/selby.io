@@ -132,7 +132,7 @@ module.exports = function(app, db) {
     }
   });
 
-  app.put('/api/posts/:post_id', function(req, res) {
+  app.put('/api/posts/:post_id([0-9]+)', function(req, res) {
     var auth_level = 0;
     if (req.headers.authorization) {
       var regex_match = req.headers.authorization.match(/Bearer (.*)/);
@@ -151,7 +151,7 @@ module.exports = function(app, db) {
 
     switch (auth_level) {
       case 9001:
-      db.post.find(req.params.post_id)
+      db.post.find({id:req.params.post_id})
       .then(function(post) {
         post
         .updateAttributes(req.body.post)
