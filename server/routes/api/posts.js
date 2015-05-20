@@ -134,6 +134,7 @@ module.exports = function(app, db) {
 
   app.put('/api/posts/:post_id([0-9]+)', function(req, res) {
     var auth_level = 0;
+    console.log(req.params.post_id);
     if (req.headers.authorization) {
       var regex_match = req.headers.authorization.match(/Bearer (.*)/);
 
