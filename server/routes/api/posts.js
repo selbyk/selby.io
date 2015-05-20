@@ -72,13 +72,10 @@ module.exports = function(app, db) {
 
     switch (auth_level) {
       case 9001:
-        db.post.find({
-          where: {
-            id: req.params.post_id
-          }
-        }).then(function(post) {
-          send(post);
-        })
+        db.post.findById(req.params.post_id)
+          .then(function(post) {
+            send(post);
+          });
         break;
       default:
         db.post.findAll({
@@ -132,13 +129,13 @@ module.exports = function(app, db) {
     }
   });
 
-  app.put('/api/posts/:post_id([0-9]+)', function(req, res) {
+  app.put('/api/posts/:id([0-9]+)', function(req, res) {
     var auth_level = 0;
-    console.log(req.params.post_id);
+    console.log(req.params.id);
     if (req.headers.authorization) {
       var regex_match = req.headers.authorization.match(/Bearer (.*)/);
 
-      if (regex_match[1] == process.env.AWS_ACCESS_KEY_ID) {
+      if (regex_match[1] === process.env.AWS_ACCESS_KEY_ID) {
         console.log('authenticated request');
         auth_level = 9001;
       }
@@ -152,7 +149,7 @@ module.exports = function(app, db) {
 
     switch (auth_level) {
       case 9001:
-      db.post.find({id:req.params.post_id})
+      db.post.findById(req.params.id)
       .then(function(post) {
         post
         .updateAttributes(req.body.post)
