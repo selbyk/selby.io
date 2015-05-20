@@ -1,7 +1,7 @@
 fs = require('fs');
 
 module.exports = function(app, db) {
-  app.post('/token', function(req, res) {
+  app.post('/api/token', function(req, res) {
     res.setHeader('Content-Type', 'application/json');
 
     if (req.body.grant_type === 'password') {
@@ -15,7 +15,7 @@ module.exports = function(app, db) {
     }
   });
 
-  app.post('/revoke', function(req, res) {
+  app.post('/api/revoke', function(req, res) {
     if (req.body.token_type_hint === 'access_token' || req.body.token_type_hint === 'refresh_token') {
       res.send('');
     } else {

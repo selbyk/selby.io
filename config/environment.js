@@ -39,7 +39,8 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth-oauth2'] = {
-    serverTokenRevocationEndpoint: '/revoke'
+    serverTokenEndpoint: '/api/token',
+    serverTokenRevocationEndpoint: '/api/revoke'
   };
 
   if (environment === 'development') {
