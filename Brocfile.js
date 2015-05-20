@@ -23,7 +23,7 @@ var app = new EmberApp({
 // along with the exports of each module as its value.
 
 // Import Font Awesome font files
-app.import("bower_components/octicons/octicons/octicons.eot", {
+/*app.import("bower_components/octicons/octicons/octicons.eot", {
   destDir: "fonts"
 });
 app.import("bower_components/octicons/octicons/octicons.svg", {
@@ -31,13 +31,13 @@ app.import("bower_components/octicons/octicons/octicons.svg", {
 });
 app.import("bower_components/octicons/octicons/octicons.ttf", {
   destDir: "fonts"
-});
+});*/
 app.import("bower_components/octicons/octicons/octicons.woff", {
   destDir: "fonts"
 });
 
 // Import Font Awesome font files
-app.import("bower_components/ionicons/fonts/ionicons.eot", {
+/*app.import("bower_components/ionicons/fonts/ionicons.eot", {
   destDir: "fonts"
 });
 app.import("bower_components/ionicons/fonts/ionicons.svg", {
@@ -45,7 +45,7 @@ app.import("bower_components/ionicons/fonts/ionicons.svg", {
 });
 app.import("bower_components/ionicons/fonts/ionicons.ttf", {
   destDir: "fonts"
-});
+});*/
 app.import("bower_components/ionicons/fonts/ionicons.woff", {
   destDir: "fonts"
 });

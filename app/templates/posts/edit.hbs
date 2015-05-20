@@ -18,7 +18,7 @@
           </label>
         </div>
         <div class="form-actions">
-          <input disabled= {{isntValid}} type="submit" class="btn btn-default" value="Post">
+          <button {{action "submit"}} type="button" class="btn btn-primary">Post</button>
         </div>
       </form>
     </div>
@@ -27,7 +27,7 @@
         <span class="icon ion-chatbubble"> </span> {{post.title}}
         <small> Live Preview</small>
       </h4>
-      {{format-markdown post.content}}
+      {{showdown-addon post.content}}
     </div>
   </div>
 </div>

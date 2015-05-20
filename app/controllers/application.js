@@ -3,6 +3,7 @@ import Ember from 'ember';
 import { moment, ago } from 'ember-moment/computed';
 
 export default Ember.Controller.extend({
+  isNews: false,
   setupController: function(controller, model) {
     controller.set('model', {});
   },

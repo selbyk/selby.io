@@ -17,7 +17,7 @@
   </div>
   <div id="top-nav" class="row pull-right">
     <div class="col-xs-3 col-sm-3 text-center">
-      {{#link-to 'index' classNameBindings=":navigation isNews:activated" }}
+      {{#link-to 'index' class="navigation {{if isNews 'activated'}}"}}
         <h3>
           <span class="mega-octicon octicon-globe"></span>
         </h3>
@@ -32,6 +32,14 @@
         <h6>Blog</h6>
       {{/link-to}}
     </div>
+    <!--<div class="col-xs-3 col-sm-3 text-center">
+      {{#link-to 'about' class='navigation' }}
+        <h3>
+          <span class="mega-octicon octicon-book"> </span>
+        </h3>
+        <h6>Refs</h6>
+      {{/link-to}}
+    </div>-->
     <div class="col-xs-3 col-sm-3 text-center">
       {{#link-to 'about' class='navigation' }}
         <h3>
