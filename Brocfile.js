@@ -50,7 +50,7 @@ app.import("bower_components/ionicons/fonts/ionicons.woff", {
   destDir: "fonts"
 });
 
-app.import({
+/*app.import({
   development: 'bower_components/d3/d3.js',
   production: 'bower_components/d3/d3.min.js'
 });
@@ -58,7 +58,7 @@ app.import({
 app.import({
   development: 'bower_components/d3pie/d3pie/d3pie.js',
   production: 'bower_components/d3pie/d3pie/d3pie.min.js'
-});
+});*/
 
 app.import("bower_components/highlightjs/styles/github.css");
 

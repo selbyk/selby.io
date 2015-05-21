@@ -43,111 +43,125 @@ export default Ember.Component.extend({
   }.observes('realSize'),
   createGraph: function(_this) {
     _this = _this || this;
-    if (_this.get('pie') !== null) {
-      _this.get('pie').destroy();
-    }
-    var dir = _this.get('dir');
-    var data = dir.get('children').map(function(child) {
-      return {
-        "dirId": child.get('id'),
-        "label": child.get('dirLabel'),
-        "value": child.get('size'),
-      };
+    var pie;
+    Ember.$.ajaxSetup({
+      cache: true,
+      async: false
     });
-    data.push({
-      "dirId": 0,
-      "label": "Hidden",
-      "value": dir.get('otherSize'),
-    });
-    var size = _this.get('realSize');
-    var pie = new d3pie(_this.get('elementId'), {
-      "header": {
-        "title": {
-          "text": dir.get('dirLabel'),
-          "fontSize": 20,
-          "font": "Source Sans Pro"
-        },
-        "subtitle": {
-          "text": dir.get('sizeString'),
-          "color": "#267122",
-          "fontSize": 20,
-          "font": "Source Sans Pro"
-        },
-        "location": "pie-center",
-        "titleSubtitlePadding": 10
-      },
-      "footer": {
-        "text": "Last Update:" + dir.get('timeSince'),
-        "color": "#4c3434",
-        "font": "open sans",
-        "location": "bottom-left"
-      },
-      "size": {
-        "canvasHeight": size,
-        "canvasWidth": size,
-        "pieInnerRadius": "60%",
-        "pieOuterRadius": "65%"
-      },
-      "data": {
-        "sortOrder": "label-desc",
-        "content": data
-      },
-      "labels": {
-        "outer": {
-          "format": "label",
-          "hideWhenLessThanPercentage": 2,
-          "pieDistance": 10
-        },
-        "inner": {
-          "format": "percentage",
-          "hideWhenLessThanPercentage": 2
-        },
-        "mainLabel": {
-          "fontSize": 10
-        },
-        "percentage": {
-          "color": "#999999",
-          "fontSize": 11,
-          "decimalPlaces": 0
-        },
-        "value": {
-          "color": "#cccc43",
-          "fontSize": 11
-        },
-        "lines": {
-          "enabled": true
-        },
-        "truncation": {
-          "enabled": true
+    Ember.$.getScript('https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js', function(data, textStatus) {
+      return Ember.$.getScript('/d3pie.min.js', function(result, textStatus) {
+        if (_this.get('pie') !== null) {
+          _this.get('pie').destroy();
         }
-      },
-      "effects": {
-        "load": {
-          "speed": 250
-        },
-        "pullOutSegmentOnClick": {
-          "effect": "none",
-          "speed": 0,
-          "size": 0
-        }
-      },
-      "misc": {
-        "canvasPadding": {
-          "top": 0,
-          "right": 0,
-          "bottom": 0,
-          "left": 0
-        }
+        var dir = _this.get('dir');
+        var data = dir.get('children').map(function(child) {
+          return {
+            "dirId": child.get('id'),
+            "label": child.get('dirLabel'),
+            "value": child.get('size'),
+          };
+        });
+        data.push({
+          "dirId": 0,
+          "label": "Hidden",
+          "value": dir.get('otherSize'),
+        });
+        var size = _this.get('realSize');
+        Ember.$.ajaxSetup({
+        cached: true,
+        async: false
+        });
+        pie = new d3pie(_this.get('elementId'), {
+          "header": {
+            "title": {
+              "text": dir.get('dirLabel'),
+              "fontSize": 20,
+              "font": "Source Sans Pro"
+            },
+            "subtitle": {
+              "text": dir.get('sizeString'),
+              "color": "#267122",
+              "fontSize": 20,
+              "font": "Source Sans Pro"
+            },
+            "location": "pie-center",
+            "titleSubtitlePadding": 10
+          },
+          "footer": {
+            "text": "Last Update:" + dir.get('timeSince'),
+            "color": "#4c3434",
+            "font": "open sans",
+            "location": "bottom-left"
+          },
+          "size": {
+            "canvasHeight": size,
+            "canvasWidth": size,
+            "pieInnerRadius": "60%",
+            "pieOuterRadius": "65%"
+          },
+          "data": {
+            "sortOrder": "label-desc",
+            "content": data
+          },
+          "labels": {
+            "outer": {
+              "format": "label",
+              "hideWhenLessThanPercentage": 2,
+              "pieDistance": 10
+            },
+            "inner": {
+              "format": "percentage",
+              "hideWhenLessThanPercentage": 2
+            },
+            "mainLabel": {
+              "fontSize": 10
+            },
+            "percentage": {
+              "color": "#999999",
+              "fontSize": 11,
+              "decimalPlaces": 0
+            },
+            "value": {
+              "color": "#cccc43",
+              "fontSize": 11
+            },
+            "lines": {
+              "enabled": true
+            },
+            "truncation": {
+              "enabled": true
+            }
+          },
+          "effects": {
+            "load": {
+              "speed": 250
+            },
+            "pullOutSegmentOnClick": {
+              "effect": "none",
+              "speed": 0,
+              "size": 0
+            }
+          },
+          "misc": {
+            "canvasPadding": {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
 
-      },
-      "callbacks": {
-        onClickSegment: function(e) {
-          //console.log(e.data);
-          _this.sendAction('transitionToDir', e.data.dirId);
-        }
-      }
+          },
+          "callbacks": {
+            onClickSegment: function(e) {
+              //console.log(e.data);
+              _this.sendAction('transitionToDir', e.data.dirId);
+            }
+          }
+        });
+        _this.set('pie', pie);
+        return pie;
+      });
     });
-    _this.set('pie', pie);
   },
   updateGraph: function() {
     var dir = this.get('dir');
