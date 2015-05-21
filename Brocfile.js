@@ -56,11 +56,12 @@ app.import("bower_components/ionicons/fonts/ionicons.woff", {
 });
 
 app.import({
-  development: 'bower_components/d3pie/d3pie/d3pie.js',
-  production: 'bower_components/d3pie/d3pie/d3pie.min.js'
-});*/
+  development: 'bower_components/highlightjs/highlight.pack.js',
+  production: 'bower_components/highlightjs/highlight.pack.js'
+});
+*/
 
-app.import("bower_components/highlightjs/styles/github.css");
+//app.import("bower_components/highlightjs/styles/androidstudio.css");
 
 app.import({
   development: 'bower_components/cryptojslib/rollups/sha3.js',
