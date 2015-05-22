@@ -10,9 +10,8 @@
 @import "app/styles/loading.less";
 @import "app/styles/todo.less";
 @import "app/styles/bootstrap-revise.less";
-@import "app/styles/radial.less";
-@import "app/styles/piechart.less";
-@import "app/styles/code.less";
+
+
 button:focus {
   outline: 0;
 }
@@ -390,8 +389,9 @@ span.fa-angle-double-right {
     margin-top: 120px;
   }
 }
-@import "app/styles/superhero/variables.less";
+
 @import "bower_components/bootstrap-less/less/bootstrap.less";
+@import "app/styles/variables.less";
 a:link {
   text-decoration: none;
 }
@@ -406,5 +406,9 @@ a:active {
 }
 a.active,
 a.activated {
-  color: darken(@brand-primary, 10%);
+  color: darken(@link-color, 7.5%);
 }
+
+@import "app/styles/radial.less";
+@import "app/styles/piechart.less";
+@import "app/styles/code.less";
