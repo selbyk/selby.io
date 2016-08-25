@@ -2,46 +2,23 @@
 const os = require('os');
 const spawn = require('child_process').spawn;
 const moment = require('moment');
-const osUsage = require('os-usage');
+const cpuStats = require('cpu-stats');
 
 let loadpercent = 0;
 let mempercent = 0;
 
-// create an instance of CpuMonitor
-const cpuMonitor = new osUsage.CpuMonitor();
-
-// watch cpu usage overview
-cpuMonitor.on('cpuUsage', function(data) {
-    console.log(data);
-
-    // { user: '9.33', sys: '56.0', idle: '34.66' }
-});
-
-// watch processes that use most cpu percentage
-cpuMonitor.on('topCpuProcs', function(data) {
-    console.log(data);
-
-    // [ { pid: '21749', cpu: '0.0', command: 'top' },
-    //  { pid: '21748', cpu: '0.0', command: 'node' },
-    //  { pid: '21747', cpu: '0.0', command: 'node' },
-    //  { pid: '21710', cpu: '0.0', command: 'com.apple.iCloud' },
-    //  { pid: '21670', cpu: '0.0', command: 'LookupViewServic' } ]
-});
-
-let calculateLoadPercent = setInterval(() => {
-  let usageTotal = 0;
-  let idleTotal = 0;
-  let cpus = os.cpus();
-  console.log(JSON.stringify(cpus, null, 2));
-  for (let i = 0; i < cpus.length; ++i) {
-    let cpu = cpus[i];
-    usageTotal += cpu.times.user + cpu.times.nice + cpu.times.sys + cpu.times.irq;
-    idleTotal += cpu.times.idle;
-  }
-  loadpercent = (usageTotal / (usageTotal + idleTotal) * 100).toFixed(2);
-  console.log(`Load: ${loadpercent}`);
-}, 1000);
-
+let getCpuStats = setInterval(() => {
+  cpuStats(10000, function(error, cpuStats) {
+    if (error) return console.error('Oh noes!', error); // actually this will never happen
+    let usageTotal = 0;
+    //console.info(result);
+    for (let i = 0; i < cpuStats.length; ++i) {
+      let cpu = cpuStats[i];
+      usageTotal += cpu.cpu;
+    }
+    loadpercent = (usageTotal / cpuStats.length).toFixed(2);
+  });
+}, 2500);
 
 let calculateMemPercent = setInterval(() => {
   let free = spawn('free', ['-m']);
@@ -68,7 +45,7 @@ let calculateMemPercent = setInterval(() => {
   //free.on('close', code => {
   //  console.log(`child process exited with code ${code}`);
   //});
-}, 5000);
+}, 2500);
 
 module.exports = (app, db) => {
   app.get('/api/stats', (req, res) => {
