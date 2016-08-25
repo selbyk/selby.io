@@ -15,19 +15,13 @@
   },
   "repository": "",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "aws-sdk": "^2.1.29",
-    "body-parser": "^1.12.4",
     "broccoli-asset-rev": "^2.0.3",
     "broccoli-clean-css": "^1.0.0",
-    "compression": "^1.4.4",
-    "connect-busboy": "0.0.2",
-    "cors": "^2.5.2",
-    "crypto-js": "^3.1.4",
     "ember-cli": "^0.2.5",
     "ember-cli-babel": "^5.0.0",
     "ember-cli-content-security-policy": "^0.3.0",
@@ -46,7 +40,15 @@
     "ember-data": "^1.0.0-beta.17",
     "ember-disqus": "^0.1.1",
     "ember-export-application-global": "^1.0.2",
-    "ember-moment": "^1.1.1",
+    "ember-moment": "^1.1.1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1.29",
+    "body-parser": "^1.12.4",
+    "connect-busboy": "0.0.2",
+    "cors": "^2.5.2",
+    "crypto-js": "^3.1.4",
+    "cpu-stats": "^1.0.0",
     "express": "^4.12.4",
     "glob": "^4.5.3",
     "moment": "^2.10.3",
